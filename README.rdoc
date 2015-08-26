@@ -1,0 +1,27 @@
+= cosmic
+
+* {Homepage}[https://rubygems.org/gems/cosmic]
+* {Documentation}[http://rubydoc.info/gems/cosmic/frames]
+* {Email}[mailto:joseph.weissman at listen360.com]
+
+== Description
+
+TODO: Description
+
+== Features
+
+== Examples
+
+  require 'cosmic'
+
+== Requirements
+
+== Install
+
+  $ gem install cosmic
+
+== Copyright
+
+Copyright (c) 2015 Joseph Weissman
+
+See LICENSE.txt for details.
