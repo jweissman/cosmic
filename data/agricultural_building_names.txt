@@ -1,0 +1,7 @@
+barn
+hayloft
+greenhouse
+farmhouse
+cowshed
+chickenhouse
+stable

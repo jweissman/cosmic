@@ -1,0 +1,11 @@
+capitol
+consulate
+courthouse
+department
+embassy
+meeting
+moot
+palace
+parliament
+office
+prison

@@ -1,0 +1,15 @@
+apartment
+asylum
+bungalow
+condominium
+dormitory
+duplex
+townhouse
+villa
+gambrel
+orphanage
+mansion
+longhouse
+hostel
+resort
+chalet

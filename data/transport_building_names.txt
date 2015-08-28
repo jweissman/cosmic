@@ -1,0 +1,9 @@
+airport
+metro
+lighthouse
+bus
+stop
+station
+local
+regional
+international

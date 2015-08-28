@@ -1,0 +1,6 @@
+brewery
+factory
+foundry
+plant
+mill
+workshop

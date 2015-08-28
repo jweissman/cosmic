@@ -14,7 +14,7 @@ rescue LoadError => e
 end
 
 begin
-  gem 'rdoc', '~> 3.0'
+  gem 'rdoc', '~> 4.2.0'
   require 'rdoc/task'
 
   RDoc::Task.new do |rdoc|
@@ -27,7 +27,7 @@ end
 task :doc => :rdoc
 
 begin
-  gem 'rspec', '~> 2.4'
+  gem 'rspec', '~> 3.3.0'
   require 'rspec/core/rake_task'
 
   RSpec::Core::RakeTask.new

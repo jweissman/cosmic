@@ -1,0 +1,7 @@
+arsenal
+barracks
+bunker
+castle
+citadel
+fortification
+outpost

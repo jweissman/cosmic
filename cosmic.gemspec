@@ -17,7 +17,14 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ['lib']
 
-  gem.add_development_dependency 'rdoc', '~> 3.0'
-  gem.add_development_dependency 'rspec', '~> 2.4'
+  gem.add_development_dependency 'rake', '~> 10.4.2'
+  gem.add_development_dependency 'rdoc', '~> 4.2.0'
+  gem.add_development_dependency 'rspec', '~> 3.3.0'
+  gem.add_development_dependency 'rspec-its', '~> 1.2.0'
+  gem.add_development_dependency 'parallel_tests'
   gem.add_development_dependency 'rubygems-tasks', '~> 0.2'
+  gem.add_development_dependency 'pry', '~> 0.10.1'
+  gem.add_development_dependency 'ruby-prof', '~> 0.15.2'
+
+  gem.add_dependency 'nil_or', '~> 2.0.0'
 end

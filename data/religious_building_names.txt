@@ -1,0 +1,9 @@
+church
+chapel
+oratory
+mosque
+monastery
+pyramid
+pagoda
+temple
+shrine
