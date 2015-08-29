@@ -1,0 +1,10 @@
+agricultural 
+commercial 
+residential 
+educational 
+government 
+industrial 
+military 
+religious 
+transport 
+infrastructure 
