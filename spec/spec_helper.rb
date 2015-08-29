@@ -3,21 +3,7 @@ gem 'rspec-its', '~> 1.2.0'
 
 require 'rspec'
 require 'rspec/its'
-
-require 'cosmic/version'
-
-require 'cosmic/dictionary'
-
-require 'cosmic/name'
-require 'cosmic/printer'
-require 'cosmic/tree'
-require 'cosmic/model'
-
-require 'cosmic/leaf'
-require 'cosmic/root'
-
-require 'cosmic/celestial_body'
-require 'cosmic/terrestrial_entity'
+require 'cosmic'
 
 include Cosmic
 

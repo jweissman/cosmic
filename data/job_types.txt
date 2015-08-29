@@ -1,0 +1,8 @@
+academia
+cultural
+medical
+industry
+public services
+transport
+science
+technology

@@ -1,0 +1,21 @@
+astronomer
+biologist
+botanist
+chemist
+computer scientist
+ecologist
+geneticist 
+geologist
+immunologist
+information scientist
+library scientist
+meteorologist
+oceanographer
+pharmacologist
+physician 
+physicist 
+psychologist 
+scientist
+statistician 
+virologist
+zoologist

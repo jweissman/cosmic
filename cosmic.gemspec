@@ -27,4 +27,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'ruby-prof', '~> 0.15.2'
 
   gem.add_dependency 'nil_or', '~> 2.0.0'
+  gem.add_dependency 'activesupport'
 end

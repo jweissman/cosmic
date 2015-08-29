@@ -1,0 +1,66 @@
+activist
+art collector
+birdwatcher
+bodybuilder
+bowler
+celloist
+chess player
+cheerleader
+climber
+cloudwatcher
+coin collector
+colorist
+cook
+cyclist
+falconer
+fencer
+fisher
+gambler
+gamer
+ghosthunter
+guitarist
+gunsmith
+gymnast
+handwriting analyst
+hang-glider
+hat collector
+hiker
+hunter
+iceskater
+illusionist
+kayaker
+knitter
+magician
+meditator
+painter
+parachutist
+people watcher
+pet owner
+pianist
+pigeon racer
+pipe smoker
+puzzler
+reader
+rockhound
+roleplayer
+runner
+skater
+soccer player
+stormchaser
+storyteller
+surfer
+swimmer
+tea taster
+tool collector
+toy collector
+veteran
+videophile
+violinist
+volunteer
+weightlifter
+woodworker
+wrestler
+writer
+yoga enthusiast
+beachcomber
+astrology enthusiast

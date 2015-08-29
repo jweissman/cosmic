@@ -1,0 +1,15 @@
+doctor
+audiologist
+chiropractor
+dentists
+dietitian
+medical laboratory scientist
+midwife
+nurse
+occupational therapist
+optometrist
+pathologist
+pharmacist
+physical therapist
+physician
+psychologist

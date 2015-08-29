@@ -1,0 +1,7 @@
+actor 
+artist
+philosopher
+storyteller
+writer 
+musician 
+dancer

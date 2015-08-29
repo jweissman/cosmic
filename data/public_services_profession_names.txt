@@ -1,0 +1,6 @@
+military officer
+firefighter 
+judge 
+police officer
+administrator
+mayor

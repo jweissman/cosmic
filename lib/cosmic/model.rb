@@ -1,7 +1,6 @@
 module Cosmic
   class Model
     include Printable
-    include Genealogical
 
     attr_writer :parent
 
@@ -12,6 +11,36 @@ module Cosmic
 
       @descendants = {}
       @ancestors   = {}
+    end
+
+    def self.descendant_class_depth(target_descendant_class)
+      depth = 0
+      descendant_class = self.child_type
+      until descendant_class == target_descendant_class || descendant_class.leaf_node?
+        descendant_class = descendant_class.child_type
+        depth = depth + 1
+      end
+      depth
+    end
+
+    def self.descendant_class_names
+      names = []
+      descendant_class = self.child_type
+      until descendant_class.leaf_node?
+        names << descendant_class.name.pluralize.downcase.to_sym
+        descendant_class = descendant_class.child_type
+      end
+      names
+    end
+
+    def self.ancestor_class_names
+      names = []
+      ancestor_class = self.parent_type
+      until ancestor_class.root_node?
+        names << ancestor_class.name.downcase.to_sym
+        ancestor_class = ancestor_class.parent_type
+      end
+      names
     end
 
     def age;  @age ||= 0 end
@@ -34,7 +63,6 @@ module Cosmic
 
       @children
     end
-
 
     def descendants(depth: 2)
       return Enumerator.new {} if self.class.leaf_node? || depth <= 0
@@ -73,17 +101,9 @@ module Cosmic
       descendants(depth: 20).lazy.select { |d| d.class.leaf_node? }
     end
 
-    def ancestor_name_elements(depth=1)
+    def ancestor_name_elements(depth=4)
       ancestors(depth: depth).map(&:name).map(&:elements).flatten
     end
-
-    # def printer
-    #   @printer ||= Printer.new
-    # end
-
-    # def narrate(depth: 2)
-    #   printer.narrate(self, depth: depth)
-    # end
 
     def inspect; "a #{type} named '#{name}'" end
 
@@ -103,9 +123,9 @@ module Cosmic
     def self.root_node?; false end
     def self.leaf_node?; false end
 
-    def self.children_range; (3..10) end
+    def self.children_range; (2..3) end
 
-    def self.name_element_range; (2..4) end
+    def self.name_element_range; (1..3) end
 
 
     def generate_parent

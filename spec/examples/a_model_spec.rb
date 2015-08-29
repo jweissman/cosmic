@@ -21,6 +21,14 @@ shared_examples "a model" do
         end
       end
     end
+
+    unless described_class.root_node?
+      describe '.parent_type' do
+        it 'should be a Class' do
+          expect(described_class.parent_type).to be_a(Class)
+        end
+      end
+    end
   end
 
   context "instance attributes" do
