@@ -18,7 +18,7 @@ module Cosmic
   
       if depth > 0
         current_model.children.each do |child|
-          narration += "\n#{' ' * (10-depth)} - #{conduct_narration(child, depth-1)}"
+          narration += "\n#{' ' * (20-depth)} - #{conduct_narration(child, depth-1)}"
         end
       end
   

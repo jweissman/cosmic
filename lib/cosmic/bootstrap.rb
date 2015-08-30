@@ -16,13 +16,13 @@ module Cosmic
                     end
 
       level_ruby = <<-rb
-        class #{level_term.classify} < Model
-          #{'extend Root' if level_index.zero? }
-          #{'extend Leaf' if level_index == hierarchy.length-1}
-          #{entity}
-          #{parent_type}
-          #{child_type}
-        end
+        class #{level_term.classify} < Model                        #  class Universe < Model
+          #{'extend Root' if level_index.zero? }                    #    extend Root
+          #{'extend Leaf' if level_index == hierarchy.length-1}     #    
+          #{entity}                                                 #    include CelestialBody
+          #{parent_type}                                            #    
+          #{child_type}                                             #    def self.child_type; [Sector] end
+        end; #{level_term.classify}                                 #  end; Universe
       rb
 
       eval level_ruby

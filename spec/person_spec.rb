@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe Person do
-  it_behaves_like 'a model'
-
   its('class.leaf_node?') { is_expected.to be true }
 
   let(:gender)      { subject.send :gender }

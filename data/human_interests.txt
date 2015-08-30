@@ -28,7 +28,7 @@ hang-glider
 hat collector
 hiker
 hunter
-iceskater
+ice-skater
 illusionist
 kayaker
 knitter
@@ -65,5 +65,4 @@ volunteer
 weightlifter
 woodworker
 wrestler
-writer
 yoga enthusiast

@@ -16,7 +16,7 @@ require 'cosmic/profession'
 require 'cosmic/bootstrap'
 
 module Cosmic
-  bootstrap(Dictionary.of(:hierarchy_terms).entries)
+  HIERARCHY = bootstrap(Dictionary.of(:hierarchy_terms).entries)
 end
 
 require 'cosmic/building'

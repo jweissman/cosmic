@@ -8,3 +8,5 @@ systems administrator
 software analyst
 consultant
 hacker
+quality analyst
+game tester

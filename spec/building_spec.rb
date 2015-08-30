@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe Building do
-  it_behaves_like 'a model'
-
   its('class.parent_type') { is_expected.to be(Lot) }
   its('class.child_type') { is_expected.to be(Room) }
   

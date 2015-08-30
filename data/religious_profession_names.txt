@@ -1,1 +1,87 @@
 clergy
+acolyte
+almoner
+altar worker
+anchorite
+apostle
+apostolic delegate
+archbishop
+archimandrite
+archpriest
+beadle
+beguine
+bishop
+canon
+cantor
+cardinal
+catechist
+cathar perfect
+chantry priest
+chaplain
+choirmaster
+choribishop
+clark
+cleric
+clerk
+colporteur
+commissary
+consecrated hermit
+consecrated virgin
+curate
+diocesan bishop
+druid
+exarch
+friar
+high priest
+imam
+infirmarian
+laity
+lay ecclesial minister
+metropolitan bishop
+monk
+monsignor
+nun
+obedientiary
+ostiary
+palmer
+papal chamberlain
+papal legate
+pardoner
+parish priest
+parochial vicar
+parson
+pastor
+patriarch
+patriarchal vicar
+pilgrim
+pontifical delegate
+pontifex
+pope
+prebendary
+precentor
+prefect apostolic
+prelate
+priest
+priestess
+primate
+prior
+prioress
+proflamen
+prophet
+provost
+rabbi
+rector
+reeve
+sacristan
+sacristan
+secular clergy
+sexton
+shaman
+subdeacon
+summoner
+territorial abbot
+territorial prelate
+theologian
+verger
+vicar forane
+vicar
