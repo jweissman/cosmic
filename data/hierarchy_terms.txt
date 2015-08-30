@@ -1,4 +1,6 @@
+multiverse
 universe
+filament
 supercluster
 constellation
 galaxy
@@ -6,12 +8,10 @@ quadrant
 sun
 planet
 continent
-zone
-nation
 region
+nation
 prefecture
 settlement
-sector
 neighborhood
 street
 block

@@ -2,3 +2,5 @@ soldier
 airman
 sailor
 marine
+commander
+general

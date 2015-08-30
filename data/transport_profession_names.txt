@@ -1,3 +1,7 @@
+air crew
+sea crew
+space crew
+starship captain
 air traffic controller
 aircraft pilot
 sea captain

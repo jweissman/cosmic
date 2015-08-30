@@ -1,5 +1,8 @@
 require 'spec_helper'
 
+def leaf_key; "#{hierarchy[hierarchy.length-1].pluralize}.first" end
+def hierarchy; Dictionary.of(:hierarchy_terms).entries; end
+
 shared_examples "a model" do
   context "class attributes" do
     describe ".leaf_node?" do
@@ -59,8 +62,11 @@ shared_examples "a model" do
       its(:siblings) { is_expected.to eql(parents_children) }  
       its('siblings.first')  { is_expected.to be_a(described_class) }
 
+
       its(:root) { is_expected.not_to be_nil }
-      its(:root) { is_expected.to be_a(Universe) }
+      let(:root_class) { hierarchy.first.classify.constantize }
+      its(:root) { is_expected.to be_a(root_class) }
+      its(hierarchy[0]) { is_expected.to be_a(root_class) }
     end
 
     unless described_class.leaf_node?
@@ -75,6 +81,9 @@ shared_examples "a model" do
       its(:leaves)        { is_expected.to be_an Enumerator::Lazy }
       its('leaves.first') { is_expected.to be_a Person }
 
+      let(:leaf_class) { subject.leaves.first.class }
+      its(leaf_key) { is_expected.to be_a(leaf_class) }
+
       unless described_class.child_type.leaf_node?
         let(:childrens_children) { subject.children.map(&:children).flatten }
 
@@ -84,6 +93,7 @@ shared_examples "a model" do
     end
   end
 
+      
   context "instance methods" do
     describe "#narrate" do
       let(:narration) { subject.narrate }

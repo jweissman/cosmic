@@ -2,3 +2,8 @@ salesperson
 advocate
 solicitor
 attorney
+manager
+executive
+buyer
+trader
+investor

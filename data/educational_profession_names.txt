@@ -3,8 +3,11 @@ librarian
 researcher
 librarian
 art historian
+art teacher
 historian
+history teacher
+math teacher
 oral historian
 professor
-teacher
+science teacher
 teaching assistant

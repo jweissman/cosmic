@@ -2,8 +2,11 @@ module Cosmic
   class Model
     include Printable
 
+    DEFAULT_DEPTH = 2
+    MAX_SEARCH_DEPTH = 25
+
     def self.children_range; (2..3) end
-    def self.name_element_range; (1..3) end
+    def self.name_element_range; (2..3) end
 
     attr_writer :parent, :children
 
@@ -25,7 +28,7 @@ module Cosmic
       @children
     end
 
-    def descendants(depth: 5)
+    def descendants(depth: DEFAULT_DEPTH)
       return Enumerator.new {} if self.class.leaf_node? || depth <= 0
 
       @descendants_enumerator ||= Enumerator.new do |yielder|
@@ -36,7 +39,7 @@ module Cosmic
       end
     end
 
-    def ancestors(depth: 5)
+    def ancestors(depth: DEFAULT_DEPTH)
       return [] if parent.nil? || depth <= 0
       @ancestors = {}
       @ancestors[depth] ||= ([parent] + parent.ancestors(depth: depth - 1)).flatten
@@ -49,18 +52,18 @@ module Cosmic
 
     def root
       return nil if self.class.root_node?
-      ancestors(depth: 25).detect do |ancestor| 
+      ancestors(depth: MAX_SEARCH_DEPTH).detect do |ancestor| 
         ancestor.class.root_node? 
       end
     end
 
     def leaves
       return [] if self.class.leaf_node?
-      descendants(depth: 20).lazy.select { |d| d.class.leaf_node? }
+      descendants(depth: MAX_SEARCH_DEPTH).lazy.select { |d| d.class.leaf_node? }
     end
 
-    def ancestor_name_elements(depth=7)
-      ancestors(depth: depth).map(&:name).map(&:elements).flatten
+    def ancestor_name_elements(depth=DEFAULT_DEPTH)
+      ancestors(depth: depth).map(&:name).map(&:elements).flatten.uniq
     end
 
     def inspect; "a #{type} named '#{name}'" end

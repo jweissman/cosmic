@@ -1,8 +1,5 @@
 module Cosmic
   class Person < Model
-    #jextend Leaf
-
-    #def self.parent_type; Building end
     def self.name_element_range; (2..4) end
 
     def inspect
