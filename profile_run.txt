@@ -1,0 +1,2491 @@
+/Users/jweissman/.rvm/rubies/ruby-2.2.2/bin/ruby -I/Users/jweissman/.rvm/gems/ruby-2.2.2/gems/rspec-core-3.3.2/lib:/Users/jweissman/.rvm/gems/ruby-2.2.2/gems/rspec-support-3.3.0/lib /Users/jweissman/.rvm/gems/ruby-2.2.2/gems/rspec-core-3.3.2/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+Cosmic::Building
+  behaves like a model
+    class attributes
+      .leaf_node?
+        should be truthy/falsy
+      .root_node?
+        should be truthy/falsy
+      .child_type
+        should be a Class
+      .parent_type
+        should be a Class
+    instance attributes
+      age
+        should be zero
+      #name
+        name.to_s
+          should eql "the expected name"
+      children
+        should be a kind of Array
+      descendants
+        should be a kind of Enumerator
+      ancestors
+        should be a kind of Array
+      siblings
+        should be a kind of Array
+      siblings
+        should not be empty
+      siblings
+        should eql Cosmic::Building, Pond (technology building), and Workshop (industrial building)
+      root
+        should not be nil
+      root
+        should be a kind of Cosmic::Universe
+      children
+        should not be empty
+      children.first
+        should be a kind of Cosmic::Room
+      children.first.parent
+        should eq International (transport building)
+      descendants
+        should be any
+      descendants
+        should include a room named 'Plateau Terrace' and a room named 'Sand'
+      leaves
+        should be a kind of Enumerator::Lazy
+      leaves.first
+        should be a kind of Cosmic::Person
+      descendants
+        should include person Lara (plucky female farmer) [hunter], person Emily Garcia Johnson (discreet female midwife) [skater] [cheerleader] [reader], person Salma (plucky female advocate) [storyteller] [painter] [magician] [handwriting analyst], person Alice (sympathetic female ecologist) [wrestler], person Jada Yang Xu (forceful female advocate) [kayaker] [fencer] [gambler], person Hiroto Scott Anderson (quiet male library scientist), and person Florence Watson Black (neat female mayor)
+      children.first.children
+        should not be empty
+    instance methods
+      #narrate
+        should include the name
+        should include the type
+        should describe children names
+        should describe children types
+  class.parent_type
+    should equal Cosmic::Lot
+  class.child_type
+    should equal Cosmic::Room
+  attributes
+    has a condition
+    has a building type
+  instance methods
+    #naming_dictionary
+      should inherit name elements from parents names
+
+Cosmic
+  should have a VERSION constant
+  should have valid models
+    Cosmic::Universe
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Supercluster
+          children.first.parent
+            should eq a universe named 'Crucis Cancri'
+          descendants
+            should be any
+          descendants
+            should include a supercluster named 'Eta' and a supercluster named 'Andromedae'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a constellation named 'Draconis Crucis Aurigae', a constellation named 'Cygni', a constellation named 'Aurigae Eta Ursae', a constellation named 'Cephei Alpha Virginis', and a constellation named 'Canis'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Supercluster
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Supercluster, a supercluster named 'Tauri Ursae Pegasi', and a supercluster named 'Capricorni Draconis'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Constellation
+          children.first.parent
+            should eq a supercluster named 'Aurigae'
+          descendants
+            should be any
+          descendants
+            should include a constellation named 'Ursae Virginis', a constellation named 'Scropii Lyrae', and a constellation named 'Draconis Corvi Tauri'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a galaxy named 'Persei Ursae', a galaxy named 'Eta', a galaxy named 'Leonis Delta Gamma', a galaxy named 'Ursae Cygni', a galaxy named 'Epsilon', and a galaxy named 'Eta Pegasi'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Constellation
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Constellation, a constellation named 'Delta Tauri Alpha', and a constellation named 'Cancri Capricorni Eta'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Galaxy
+          children.first.parent
+            should eq a constellation named 'Draconis Crucis Gamma'
+          descendants
+            should be any
+          descendants
+            should include a galaxy named 'Scropii Gamma' and a galaxy named 'Ursae'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a quadrant named 'Epsilon', a quadrant named 'Cygni Cancri Beta', a quadrant named 'Eta', and a quadrant named 'Beta Delta'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Galaxy
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Galaxy, a galaxy named 'Tauri', and a galaxy named 'Eta Aurigae'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Quadrant
+          children.first.parent
+            should eq a galaxy named 'Lyrae Epsilon Virginis'
+          descendants
+            should be any
+          descendants
+            should include a quadrant named 'Pegasi Cancri', a quadrant named 'Eta Majoris Beta', and a quadrant named 'Andromedae Cancri'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a sun named 'Ursae Andromedae', a sun named 'Lyrae', a sun named 'Beta Ursae', a sun named 'Cygni Tauri', a sun named 'Canis', and a sun named 'Cancri'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Quadrant
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Quadrant, a quadrant named 'Virginis Corvi Persei', and a quadrant named 'Beta Alpha'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Sun
+          children.first.parent
+            should eq a quadrant named 'Lyrae Pegasi Capricorni'
+          descendants
+            should be any
+          descendants
+            should include a sun named 'Corvi Delta' and a sun named 'Epsilon Majoris Scropii'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a planet named 'Andromedae', a planet named 'Cephei', a planet named 'Leonis', a planet named 'Lyrae Cygni', and a planet named 'Cygni Pegasi'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Sun
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Sun, a sun named 'Cancri Alpha Cygni', and a sun named 'Persei Pegasi'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Planet
+          children.first.parent
+            should eq a sun named 'Delta Capricorni'
+          descendants
+            should be any
+          descendants
+            should include a planet named 'Cygni Leonis Aurigae' and a planet named 'Cygni Eta Ursae'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a continent named 'Interfluve', a continent named 'Pass', a continent named 'Cusp Beta Swamp', a continent named 'Chimney', a continent named 'Tube', and a continent named 'Slope'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Planet
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Planet, a planet named 'Delta Epsilon', and a planet named 'Cancri Alpha Delta'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Continent
+          children.first.parent
+            should eq a planet named 'Canis'
+          descendants
+            should be any
+          descendants
+            should include a continent named 'Isthmus Marsh', a continent named 'Cuesta Abime Quay', and a continent named 'Valley'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a zone named 'Strike', a zone named 'Defile Interfluve', a zone named 'Abime Highland', a zone named 'Mud Hill Ursae', a zone named 'Gulf Corrie', a zone named 'Foreland Canis', and a zone named 'Cancri'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Continent
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Continent, a continent named 'Gut Grassland Tauri', and a continent named 'Faceted Vale Abime'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Zone
+          children.first.parent
+            should eq a continent named 'Islet Delta Pinnacle'
+          descendants
+            should be any
+          descendants
+            should include a zone named 'Forest Cancri Summit', a zone named 'Virginis', and a zone named 'Pinnacle Dirt Splay'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a nation named 'Salt Capricorni Vale', a nation named 'Impact Terrace Bend', a nation named 'Fan Blowhole', a nation named 'Cancri Shoal Gamma', and a nation named 'Estuary'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Zone
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Zone, a zone named 'Cenote', and a zone named 'Floodplain Virginis'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Nation
+          children.first.parent
+            should eq a zone named 'Glen'
+          descendants
+            should be any
+          descendants
+            should include a nation named 'Canyon Pond', a nation named 'Fjord Confluence Cephei', and a nation named 'Pinnacle'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a region named 'Pinnacle', a region named 'Tea', a region named 'Flow Glen Island', a region named 'Highland Harbor', a region named 'Dome Ayre', a region named 'Majoris Barrier Cay', and a region named 'Pinnacle'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Nation
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Nation, a nation named 'Badlands Beach Glen', and a nation named 'Aurigae'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Region
+          children.first.parent
+            should eq a nation named 'Cenote Bay'
+          descendants
+            should be any
+          descendants
+            should include a region named 'Creek', a region named 'Table', and a region named 'Ocean Monastery'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a prefecture named 'Waterhole Strath Ridge', a prefecture named 'Bog', a prefecture named 'Delta Mount', a prefecture named 'Canyon', a prefecture named 'Pool', a prefecture named 'Hollow Islet', a prefecture named 'Gut Flat', and a prefecture named 'Shelter Draconis Dell'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Region
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Region, a region named 'Abime', and a region named 'Strath Atoll Erg'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Prefecture
+          children.first.parent
+            should eq a region named 'Rock Sea Draw'
+          descendants
+            should be any
+          descendants
+            should include a prefecture named 'Leonis Key Splay', a prefecture named 'Port', and a prefecture named 'Coast Parliament'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a settlement named 'Waterhole Fjord', a settlement named 'Mound', a settlement named 'Badlands Cancri', a settlement named 'Table Crest', and a settlement named 'Tide Atoll Crucis'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Prefecture
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Prefecture, a prefecture named 'Tube Rapids Doline', and a prefecture named 'Dune Quay Tauri'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Settlement
+          children.first.parent
+            should eq a prefecture named 'Ridge'
+          descendants
+            should be any
+          descendants
+            should include a settlement named 'Spin', a settlement named 'River Ridge Creek', and a settlement named 'Roadstead'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a sector named 'Badlands Headland', a sector named 'River Bench', a sector named 'Chimney Vale', a sector named 'Knoll Tide', a sector named 'Fan Persei', and a sector named 'Tea'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Settlement
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Settlement, a settlement named 'Valley', and a settlement named 'Woods Knoll River'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Sector
+          children.first.parent
+            should eq a settlement named 'Virginis Grassland'
+          descendants
+            should be any
+          descendants
+            should include a sector named 'Creek Rim' and a sector named 'Coast Cliff Side'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a neighborhood named 'Spur', a neighborhood named 'Strath Cusp Desert', a neighborhood named 'Cave Island', a neighborhood named 'Blanket Side Majoris', and a neighborhood named 'Hollow Confluence'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Sector
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Sector, a sector named 'Splay', and a sector named 'Bench Sea Crucis'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Neighborhood
+          children.first.parent
+            should eq a sector named 'Arch Pitch'
+          descendants
+            should be any
+          descendants
+            should include a neighborhood named 'Ridge Side' and a neighborhood named 'Lagoon Lava'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a street named 'Channel Port Crest', a street named 'Ridge', a street named 'Arch Knoll', a street named 'Tea Sierra', and a street named 'Monastery'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Neighborhood
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Neighborhood, a neighborhood named 'Parliament Cove', and a neighborhood named 'Range Draw'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Street
+          children.first.parent
+            should eq a neighborhood named 'Ursae Glacier Fork'
+          descendants
+            should be any
+          descendants
+            should include a street named 'Falls Corvi' and a street named 'Marsh Isthmus'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a block named 'Table Crater', a block named 'Foreland', a block named 'Knoll', a block named 'Inlet', a block named 'Marsh Gorge', and a block named 'Strait Capricorni'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Street
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Street, a street named 'Calanque', and a street named 'Majoris Falls'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Block
+          children.first.parent
+            should eq a street named 'Rapids Gap Bend'
+          descendants
+            should be any
+          descendants
+            should include a block named 'Spur Coast Beta', a block named 'Sierra', and a block named 'Bay Range Vent'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a lot named 'Abime Lagoon', a lot named 'Impact Corrie Meeting', a lot named 'Delta Ridge', a lot named 'Terrace', a lot named 'Fork Brook Floodplain', and a lot named 'Interfluve'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Block
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Block, a block named 'Cape Rapids', and a block named 'Archipelago'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Lot
+          children.first.parent
+            should eq a block named 'Glen'
+          descendants
+            should be any
+          descendants
+            should include a lot named 'Ocean Stream' and a lot named 'Sea Hollow'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include Strath Draw (technology building), Islet Draw Cave (cultural building), Concert hall Tea (cultural building), Draw Kettle (military building), Corrie Desert (residential building), Amphitheater Union Museum (educational building), Hall (educational building), and School (educational building)
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Lot
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Lot, a lot named 'Sinkhole Impact Inlet', and a lot named 'Desert Salt'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Building
+          children.first.parent
+            should eq a lot named 'Desert Table'
+          descendants
+            should be any
+          descendants
+            should include Surge Marsh Pond (military building), Aurigae (agricultural building), and Gambrel (residential building)
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include a room named 'Foreland Monastery Spit', a room named 'Epsilon', a room named 'Bend Fluvial Calanque', a room named 'Interfluve', a room named 'Doline Andromedae', and a room named 'Dale'
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Building
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Building, Interfluve (industrial building), and Dell (transport building)
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Room
+          children.first.parent
+            should eq Aurigae (educational building)
+          descendants
+            should be any
+          descendants
+            should include a room named 'Ravine' and a room named 'Union Marsh Cay'
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+          descendants
+            should include person Omar (sympathetic male airman) [wrestler], person Lucas Collins Murphy (persistent male web developer) [surfer] [reader] [guitarist] [weightlifter], person Adam (powerful male airman), person Carter Ma Chen (dynamic male airman) [hunter] [hat collector] [gymnast] [chess player] [kayaker], and person Leyla Clark Patel (kind female nurse) [videophile] [cyclist] [iceskater]
+          children.first.children
+            should not be empty
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Room
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .child_type
+            should be a Class
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Room, a room named 'Interfluve Caldera', and a room named 'Atoll'
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+          children
+            should not be empty
+          children.first
+            should be a kind of Cosmic::Person
+          children.first.parent
+            should eq a room named 'Pillar Cephei'
+          descendants
+            should be any
+          descendants
+            should include person Nadia (romantic female sea captain) [gunsmith] [meditator] [cloudwatcher] and person Fatima (gentle female art historian) [videophile] [cloudwatcher] [pigeon racer] [pet owner]
+          leaves
+            should be a kind of Enumerator::Lazy
+          leaves.first
+            should be a kind of Cosmic::Person
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+            should describe children names
+            should describe children types
+    Cosmic::Person
+      behaves like a model
+        class attributes
+          .leaf_node?
+            should be truthy/falsy
+          .root_node?
+            should be truthy/falsy
+          .parent_type
+            should be a Class
+        instance attributes
+          age
+            should be zero
+          #name
+            name.to_s
+              should eql "the expected name"
+          children
+            should be a kind of Array
+          descendants
+            should be a kind of Enumerator
+          ancestors
+            should be a kind of Array
+          siblings
+            should be a kind of Array
+          siblings
+            should not be empty
+          siblings
+            should eql Cosmic::Person, person Elijah Wilson Gerber (polite male astronomer) [yoga enthusiast] [cyclist] [art collector] [ghosthunter], and person Faye (compassionate female housewife)
+          root
+            should not be nil
+          root
+            should be a kind of Cosmic::Universe
+        instance methods
+          #narrate
+            should include the name
+            should include the type
+
+Cosmic::Dictionary
+  entries
+    should not be empty
+  .of
+    should load entries from a word list file
+  #new
+    without arguments
+      has a single token entry
+  #merged_with
+    a more realistic case
+      adds entries as expected
+        should eq 3
+
+Cosmic::Name
+  #new
+    should have the expected value
+  #elements
+    should break down a name into components
+  .generate
+    should create a name from elements
+
+Cosmic::Person
+  behaves like a model
+    class attributes
+      .leaf_node?
+        should be truthy/falsy
+      .root_node?
+        should be truthy/falsy
+      .parent_type
+        should be a Class
+    instance attributes
+      age
+        should be zero
+      #name
+        name.to_s
+          should eql "the expected name"
+      children
+        should be a kind of Array
+      descendants
+        should be a kind of Enumerator
+      ancestors
+        should be a kind of Array
+      siblings
+        should be a kind of Array
+      siblings
+        should not be empty
+      siblings
+        should eql Cosmic::Person, person Amir Carter Jackson (versatile male farmer), and person Emily Carter Huber (tough female dietitian) [chess player] [skater] [hiker]
+      root
+        should not be nil
+      root
+        should be a kind of Cosmic::Universe
+    instance methods
+      #narrate
+        should include the name
+        should include the type
+  class.leaf_node?
+    should equal true
+  attributes
+    should have a gender
+    should have a profession
+    should have a personality
+    should have interests
+  attribute methods
+    should indicate gender
+    should indicate profession
+    should indicate profession type
+    should indicate personal qualities
+    should indicate interests
+  instance methods
+    #inspect
+      should include gender
+      should include profession
+      should include personality
+
+Cosmic::Profession
+  generating professions in the field of...
+    agricultural
+      should have a type
+      should have a name
+    commercial
+      should have a type
+      should have a name
+    cultural
+      should have a type
+      should have a name
+    educational
+      should have a type
+      should have a name
+    government
+      should have a type
+      should have a name
+    industrial
+      should have a type
+      should have a name
+    military
+      should have a type
+      should have a name
+    medical
+      should have a type
+      should have a name
+    religious
+      should have a type
+      should have a name
+    residential
+      should have a type
+      should have a name
+    science
+      should have a type
+      should have a name
+    technology
+      should have a type
+      should have a name
+    transport
+      should have a type
+      should have a name
+Thread ID: 70165144666620
+Fiber ID: 70165145380720
+Total: 2.682318
+Sort by: self_time
+
+ %self      total      self      wait     child     calls  name
+ 12.10      0.325     0.325     0.000     0.000     5681   Array#uniq 
+  3.67      0.156     0.098     0.000     0.058    64075   Cosmic::Model#parent 
+  3.08      0.083     0.083     0.000     0.000    28048   Array#flatten 
+  2.93      1.020     0.079     0.000     0.941    32742  *Array#each 
+  1.96      0.980     0.053     0.000     0.928    18284  *Hash#fetch 
+  1.88      0.051     0.051     0.000     0.001     5948   Array#- 
+  1.86      0.050     0.050     0.000     0.000    16743   RSpec::Core::Hooks::HookCollections#hooks_for 
+  1.58      0.245     0.042     0.000     0.203    32742  *Class#new 
+  1.55      0.114     0.041     0.000     0.072    11916   RSpec::Core::Configuration#tty 
+  1.44      0.120     0.039     0.000     0.081    16743   RSpec::Core::Hooks::HookCollections#matching_hooks_for 
+  1.37      0.037     0.037     0.000     0.000    13226   Symbol#to_proc 
+  1.33      0.363     0.036     0.000     0.328    25131  *Cosmic::Model#ancestors 
+  1.23      0.135     0.033     0.000     0.102    11202   RSpec::Core::Hooks::HookCollections#run_owned_hooks_for 
+  1.23      0.038     0.033     0.000     0.005    18027   RSpec::Core::Hooks#hooks 
+  1.16      0.072     0.031     0.000     0.041    11916   RSpec::Core::Configuration#value_for 
+  1.16      0.031     0.031     0.000     0.000    15948   <Module::RSpec>#configuration 
+  0.96      1.249     0.026     0.000     1.223     3354   BasicObject#instance_exec 
+  0.92      0.145     0.025     0.000     0.120     4734   RSpec::Core::MemoizedHelpers#__init_memoized 
+  0.90      0.048     0.024     0.000     0.024     6471   Enumerable#to_a 
+  0.87      0.023     0.023     0.000     0.000    10191   Array#sample 
+  0.84      0.033     0.023     0.000     0.010      665   Array#select 
+  0.82      0.022     0.022     0.000     0.000     4894   Cosmic::Model#initialize 
+  0.75      0.020     0.020     0.000     0.000    14715   Kernel#class 
+  0.67      0.023     0.018     0.000     0.005     5778   RSpec::Core::Example#skip 
+  0.66      0.060     0.018     0.000     0.042     5681   Enumerable#entries 
+  0.63      0.017     0.017     0.000     0.000    23674   Kernel#nil? 
+  0.58      0.340     0.016     0.000     0.325     5681   Cosmic::Dictionary#merged_with 
+  0.56      0.056     0.015     0.000     0.041     4734   RSpec::Core::MemoizedHelpers::ThreadsafeMemoized#initialize 
+  0.56      0.031     0.015     0.000     0.016     4734   RSpec::Core::ReentrantMutex#initialize 
+  0.55      1.963     0.015     0.000     1.948     4614  *RSpec::Core::Hooks::HookCollections#run 
+  0.51      0.043     0.014     0.000     0.029     2417   <Class::Cosmic::Model>#generate_parent 
+  0.48      0.028     0.013     0.000     0.015     6361   <Class::Cosmic::Dictionary>#of 
+  0.47      0.013     0.013     0.000     0.000     2694   IO#write 
+  0.44      0.042     0.012     0.000     0.030     3995   Hash#each 
+  0.44      0.023     0.012     0.000     0.011     3330   RSpec::Core::Set#each 
+  0.43      0.012     0.012     0.000     0.000     6361   <Class::Cosmic::Dictionary>#dictionaries 
+  0.42      0.011     0.011     0.000     0.000     6018   <Class::RSpec::Core::ExampleGroup>#before_context_ivars 
+  0.42      0.011     0.011     0.000     0.000     3876   Kernel#singleton_class 
+  0.41      0.054     0.011     0.000     0.043     1650   Cosmic::Model#children 
+  0.39      2.259     0.010     0.000     2.249      642   RSpec::Core::Example#run 
+  0.38      0.010     0.010     0.000     0.000    19833   Module#< 
+  0.38      0.187     0.010     0.000     0.176     2688   <Class::RSpec::Core::MemoizedHelpers::ContextHookMemoized>#isolate_for_context_hook 
+  0.38      0.016     0.010     0.000     0.006     2568   <Module::RSpec::Support>#thread_local_data 
+  0.34      0.875     0.009     0.000     0.866     5680  *Cosmic::Model#ancestor_name_elements 
+  0.33      0.009     0.009     0.000     0.000     5484   <Class::Thread>#current 
+  0.32      0.027     0.009     0.000     0.018     2568   RSpec::Core::Example#hooks 
+  0.32      0.029     0.009     0.000     0.020     1404   <Class::RSpec::Core::ExampleGroup>#ordering_strategy 
+  0.31      0.150     0.008     0.000     0.142     1344   <Class::RSpec::Core::ExampleGroup>#run_before_context_hooks 
+  0.31      0.008     0.008     0.000     0.000     3324   Kernel#instance_variable_set 
+  0.30      1.884     0.008     0.000     1.876      642   RSpec::Core::Hooks::HookCollections#run_around_example_hooks_for 
+  0.30      0.020     0.008     0.000     0.012     2918   Proc#call 
+  0.30      1.090     0.008     0.000     1.081     2962  *Integer#times 
+  0.30      0.009     0.008     0.000     0.001     2731   Proc#yield 
+  0.28      0.083     0.008     0.000     0.075      642   Array#reverse_each 
+  0.28      0.008     0.008     0.000     0.000     6018   Mutex#initialize 
+  0.28      0.073     0.008     0.000     0.066     2046   RSpec::Core::MemoizedHelpers#initialize 
+  0.28      0.008     0.008     0.000     0.000     2748   <Module::RSpec>#world 
+  0.28      0.081     0.007     0.000     0.073     2046   RSpec::Core::ExampleGroup#initialize 
+  0.27      0.130     0.007     0.000     0.123     2688   RSpec::Core::Reporter#notify 
+  0.27      0.016     0.007     0.000     0.009     2964   Cosmic::Name#initialize 
+  0.27      0.020     0.007     0.000     0.013      642   <Module::RSpec::Core::MetadataFilter>#silence_metadata_example_group_deprecations 
+  0.27      0.117     0.007     0.000     0.109     1344   <Class::RSpec::Core::ExampleGroup>#run_after_context_hooks 
+  0.26      0.025     0.007     0.000     0.018     3330   <Class::RSpec::Core::ExampleGroup>#set_ivars 
+  0.26      0.020     0.007     0.000     0.013     1284   RSpec::Core::Example#description 
+  0.26      0.007     0.007     0.000     0.000     3381   <Class::RSpec::Core::ExampleGroup>#metadata 
+  0.26      0.036     0.007     0.000     0.029     2688   RSpec::Core::Reporter#registered_listeners 
+  0.26      0.007     0.007     0.000     0.000     5352   <Class::Cosmic::Model>#root_node? 
+  0.23      0.042     0.006     0.000     0.035     2568   <Class::RSpec::Core::ExampleGroup>#parent_groups 
+  0.23      1.052     0.006     0.000     1.046     5678  *Cosmic::Model#name_elements 
+  0.23      0.011     0.006     0.000     0.004     1344   <Class::RSpec::Core::ExampleGroup>#superclass_before_context_ivars 
+  0.22      0.012     0.006     0.000     0.006     1404   <Class::RSpec::Core::ExampleGroup>#filtered_examples 
+  0.22      0.006     0.006     0.000     0.000     3330   Hash#keys 
+  0.22      0.023     0.006     0.000     0.017     1344   <Class::RSpec::Core::ExampleGroup>#each_instance_variable_for_example 
+  0.22      0.006     0.006     0.000     0.000       10   Kernel#require_relative 
+  0.21      0.006     0.006     0.000     0.000     3783   Range#each 
+  0.21      0.017     0.006     0.000     0.011     1284   <Class::RSpec::Core::Notifications::ExampleNotification>#for 
+  0.21      0.046     0.006     0.000     0.040     1926   RSpec::Core::Hooks::HookCollections#owner_parent_groups 
+  0.21      0.011     0.006     0.000     0.005     1135   RSpec::Core::ReentrantMutex#enter 
+  0.21      0.013     0.006     0.000     0.007     1120   Cosmic::Model#type 
+  0.20      0.005     0.005     0.000     0.000     2102   String#strip 
+  0.20      0.007     0.005     0.000     0.002     1135   RSpec::Core::ReentrantMutex#exit 
+  0.19      0.029     0.005     0.000     0.024      702   RSpec::Core::Formatters::DocumentationFormatter#example_group_started 
+  0.19      0.009     0.005     0.000     0.003     1404   RSpec::Core::Ordering::Registry#fetch 
+  0.19      0.575     0.005     0.000     0.570      642   RSpec::Core::Example#run_after_example 
+  0.19      0.016     0.005     0.000     0.011     1284   RSpec::Core::Hooks::HookCollections#process 
+  0.19      0.018     0.005     0.000     0.013     1350   IO#puts 
+  0.19      0.226     0.005     0.000     0.221     1373  *Enumerable#inject 
+  0.19      0.021     0.005     0.000     0.016      799   Array#initialize 
+  0.19      0.053     0.005     0.000     0.048      717   <Module::RSpec::Expectations::ExpectationHelper>#with_matcher 
+  0.18      0.021     0.005     0.000     0.016     2802  *<Class::RSpec::Core::ExampleGroup>#descendant_filtered_examples 
+  0.18      0.005     0.005     0.000     0.000     3682   <Class::Cosmic::Model>#leaf_node? 
+  0.18      0.006     0.005     0.000     0.001     5554   Kernel#respond_to? 
+  0.17      0.095     0.005     0.000     0.090      642   RSpec::Core::Example#finish 
+  0.17      0.149     0.005     0.000     0.145     1284   RSpec::Core::Hooks::HookCollections#run_example_hooks_for 
+  0.17      0.023     0.005     0.000     0.018      642   <Class::RSpec::Core::ExampleGroup>#with_replaced_metadata 
+  0.17      0.006     0.004     0.000     0.001     1344   RSpec::Core::Formatters::DocumentationFormatter#current_indentation 
+  0.17      0.008     0.004     0.000     0.004     1973  *Hash#each_value 
+  0.17      0.009     0.004     0.000     0.004     1284   RSpec::Mocks::ReentrantMutex#initialize 
+  0.17      0.004     0.004     0.000     0.000     6735   Module#=== 
+  0.16      0.016     0.004     0.000     0.011      642   RSpec::Core::FilterableItemRepository::QueryOptimized#items_for 
+  0.16      1.102     0.004     0.000     1.098     2962  *<Class::Cosmic::Name>#generate 
+  0.16      1.113     0.004     0.000     1.109     2961  *Cosmic::Model#generate_name 
+  0.16      0.016     0.004     0.000     0.012     1284   RSpec::Mocks::Space#new_mutex 
+  0.16      0.004     0.004     0.000     0.000     1344   Kernel#instance_variables 
+  0.16      0.004     0.004     0.000     0.000     2715   Struct#initialize 
+  0.16      0.023     0.004     0.000     0.019      642   RSpec::Mocks::Space#initialize 
+  0.16      2.033     0.004     0.000     2.029      642   RSpec::Core::Example#with_around_and_singleton_context_hooks 
+  0.15      0.914     0.004     0.000     0.910     2847  *Cosmic::TerrestrialEntity#naming_dictionary 
+  0.15      0.066     0.004     0.000     0.062      702   RSpec::Core::Reporter#example_group_started 
+  0.14      0.925     0.004     0.000     0.921     1135  *RSpec::Core::ReentrantMutex#synchronize 
+  0.14      0.008     0.004     0.000     0.004     1284   <Class::Time>#now 
+  0.14      0.009     0.004     0.000     0.006      702   <Class::RSpec::Core::ExampleGroup>#description 
+  0.14      0.040     0.004     0.000     0.036     1145   Cosmic::Name#to_s 
+  0.14      0.017     0.004     0.000     0.013      642   RSpec::Core::Example#inspect_output 
+  0.14      0.011     0.004     0.000     0.007     1284   RSpec::Core::Hooks::HookCollections#processable_hooks_for 
+  0.14      0.893     0.004     0.000     0.890      901   Cosmic::Model#inspect 
+  0.14      0.027     0.004     0.000     0.023     1344   <Class::RSpec::Core::ExampleGroup>#store_before_context_ivars 
+  0.13      0.458     0.004     0.000     0.454      642   RSpec::Core::Example#assign_generated_description 
+  0.13      2.355     0.004     0.000     2.352      702   <Class::RSpec::Core::ExampleGroup>#run_examples 
+  0.13      0.013     0.004     0.000     0.010      642   RSpec::Mocks::Space#reset_all 
+  0.13      0.030     0.003     0.000     0.026     2161  *Enumerable#all? 
+  0.13      0.003     0.003     0.000     0.000     2502   String#to_s 
+  0.13      0.005     0.003     0.000     0.001      291   RSpec::Matchers#include 
+  0.13      0.011     0.003     0.000     0.007      633   RSpec::Core::ExampleGroup#described_class 
+  0.13      0.003     0.003     0.000     0.000     1756   Kernel#hash 
+  0.13      0.003     0.003     0.000     0.000     1986   RSpec::Core::Configuration#format_docstrings_block 
+  0.12      0.003     0.003     0.000     0.000     1700   <Class::Cosmic::Model>#children_range 
+  0.12      0.003     0.003     0.000     0.000      642   RSpec::Core::Hooks::HookCollections#initialize 
+  0.12      0.003     0.003     0.000     0.000      942   Module#ancestors 
+  0.12      0.003     0.003     0.000     0.000     1404   <Class::RSpec::Core::ExampleGroup>#children 
+  0.12      0.022     0.003     0.000     0.019      642   RSpec::Core::Hooks::HookCollections#register_global_singleton_context_hooks 
+  0.12      0.005     0.003     0.000     0.002     1404   <Class::RSpec::Core::Notifications::GroupNotification>#new 
+  0.12      0.018     0.003     0.000     0.015      642   <Module::RSpec::Mocks>#teardown 
+  0.12      0.931     0.003     0.000     0.928     1445  *RSpec::Core::MemoizedHelpers::ThreadsafeMemoized#fetch_or_store 
+  0.12      0.009     0.003     0.000     0.005     1434   <Class::RSpec::Expectations::LegacyMatcherAdapter>#wrap 
+  0.11      0.008     0.003     0.000     0.005      731   Cosmic::Model#descendants 
+  0.11      0.005     0.003     0.000     0.002     1284   <Class::RSpec::Core::Notifications::ExampleNotification>#new 
+  0.11      0.003     0.003     0.000     0.000     1987   Hash#clear 
+  0.11      0.136     0.003     0.000     0.133      642   RSpec::Core::Example#run_before_example 
+  0.11      0.226     0.003     0.000     0.223      417   RSpec::ExampleGroups::CosmicPerson::ClassLeafNode::LetDefinitions#__its_subject 
+  0.11      0.003     0.003     0.000     0.000     1404   RSpec::Core::Ordering::Identity#order 
+  0.11      0.003     0.003     0.000     0.000     1542   String#split 
+  0.11      0.006     0.003     0.000     0.003      633   <Class::RSpec::Core::ExampleGroup>#location 
+  0.11      0.030     0.003     0.000     0.027      642   RSpec::Core::Example#start 
+  0.11      0.004     0.003     0.000     0.001     1284   Time#initialize 
+  0.11      0.007     0.003     0.000     0.004      717   <Class::RSpec::Expectations::ExpectationTarget>#for 
+  0.11      0.037     0.003     0.000     0.034      642   RSpec::Core::Formatters::DocumentationFormatter#passed_output 
+  0.11      0.016     0.003     0.000     0.014      461   <Module::RSpec::Support::ObjectFormatter>#prepare_for_inspection 
+  0.11      0.027     0.003     0.000     0.024      642   RSpec::Core::Configuration#configure_example 
+  0.10      1.116     0.003     0.000     1.113    19989  *Cosmic::Model#name 
+  0.10      0.003     0.003     0.000     0.000     1404   RSpec::Core::Configuration#ordering_registry 
+  0.10      0.008     0.003     0.000     0.005      642   RSpec::Mocks::Space#verify_all 
+  0.10      0.003     0.003     0.000     0.000     3369   NilClass#nil? 
+  0.10      0.003     0.003     0.000     0.000      646   String#gsub 
+  0.10      0.027     0.003     0.000     0.024      799   <Class::Cosmic::Model>#generate_children 
+  0.10      0.021     0.003     0.000     0.019      642   RSpec::Core::Formatters::ConsoleCodes#wrap 
+  0.10      0.930     0.003     0.000     0.927      715  *RSpec::ExampleGroups::CosmicProfession::GeneratingProfessionsInTheFieldOf::Transport#subject 
+  0.10      0.003     0.003     0.000     0.000     2071   BasicObject#initialize 
+  0.10      0.005     0.003     0.000     0.003      672   <Module::RSpec::Matchers>#is_a_matcher? 
+  0.10      0.023     0.003     0.000     0.020     1420  *Array#any? 
+  0.10      0.007     0.003     0.000     0.005      642   RSpec::Core::Example::ExecutionResult#record_finished 
+  0.10      0.004     0.003     0.000     0.001      717   <Class::RSpec::Expectations::LegacyMatcherAdapter::RSpec2>#interface_matches? 
+  0.09      0.003     0.003     0.000     0.001      717   <Module::RSpec::Expectations::ExpectationHelper>#check_message 
+  0.09      0.003     0.003     0.000     0.000     2055   Cosmic::Root#root_node? 
+  0.09      1.901     0.003     0.000     1.899      642   RSpec::Core::Example#with_around_example_hooks 
+  0.09      0.015     0.003     0.000     0.013      642   RSpec::Core::Example#record_finished 
+  0.09      0.011     0.002     0.000     0.008     1284   <Module::RSpec>#current_example= 
+  0.09      0.009     0.002     0.000     0.007      717   RSpec::Matchers#expect 
+  0.09      0.315     0.002     0.000     0.312     2702  *Cosmic::CelestialBody#naming_dictionary 
+  0.09      0.006     0.002     0.000     0.004      109   RSpec::Matchers#method_missing 
+  0.09      0.090     0.002     0.000     0.088     1344  *RSpec::Core::FlatMap#flat_map 
+  0.09      0.002     0.002     0.000     0.000      986   Mutex#unlock 
+  0.09      0.021     0.002     0.000     0.018      702   RSpec::Core::Reporter#example_group_finished 
+  0.09      0.002     0.002     0.000     0.000     1344   Kernel#instance_variable_get 
+  0.09      0.022     0.002     0.000     0.019      642   RSpec::Core::Reporter#example_started 
+  0.09      0.015     0.002     0.000     0.013      642   RSpec::Core::Example#verify_mocks 
+  0.09      0.031     0.002     0.000     0.029      665   RSpec::Core::FilterableItemRepository::UpdateOptimized#items_for 
+  0.08      0.053     0.002     0.000     0.050      630   RSpec::Expectations::ExpectationTarget#to 
+  0.08      0.002     0.002     0.000     0.000      642   <Module::RSpec::Matchers>#clear_generated_description 
+  0.08      0.010     0.002     0.000     0.008      642   <Module::RSpec::Mocks>#verify 
+  0.08      0.333     0.002     0.000     0.330      374   <Module::RSpec::Matchers::EnglishPhrasing>#list 
+  0.08      0.011     0.002     0.000     0.008     4824  *Enumerator::Yielder#<< 
+  0.08      0.002     0.002     0.000     0.000      642   RSpec::Core::Notifications::ExampleNotification#example 
+  0.08      0.013     0.002     0.000     0.011      323   RSpec::Mocks::ReentrantMutex#synchronize 
+  0.08      0.051     0.002     0.000     0.049      642   RSpec::Core::Formatters::DocumentationFormatter#example_passed 
+  0.08      0.011     0.002     0.000     0.009      717   <Module::RSpec::Expectations::ExpectationHelper>#modern_matcher_from 
+  0.08      0.034     0.002     0.000     0.032      730   RSpec::Core::MemoizedHelpers#subject 
+  0.08      0.030     0.002     0.000     0.028      642   RSpec::Core::MockingAdapters::RSpec#setup_mocks_for_rspec 
+  0.08      0.002     0.002     0.000     0.000     1868   Array#last 
+  0.08      0.002     0.002     0.000     0.000     2199   String#capitalize 
+  0.08      0.002     0.002     0.000     0.000     1344   Class#superclass 
+  0.07      0.073     0.002     0.000     0.071      642   RSpec::Core::Reporter#example_passed 
+  0.07      0.020     0.002     0.000     0.018      642   RSpec::Core::MockingAdapters::RSpec#teardown_mocks_for_rspec 
+  0.07      0.451     0.002     0.000     0.449      418   <Module::RSpec::Matchers>#generated_description 
+  0.07      0.002     0.002     0.000     0.000      642   Array#reverse 
+  0.07      0.088     0.002     0.000     0.086     1344  *Enumerable#flat_map 
+  0.07      0.010     0.002     0.000     0.008      642   RSpec::Core::Configuration#output_to_tty? 
+  0.07      0.002     0.002     0.000     0.000     1284   RSpec::Core::Example::ExecutionResult#example_skipped? 
+  0.07      0.002     0.002     0.000     0.000     1608   Module#name 
+  0.07      0.002     0.002     0.000     0.000      642   RSpec::Core::Example#example_group 
+  0.06      0.003     0.002     0.000     0.001      457   Cosmic::Dictionary#sample 
+  0.06      0.002     0.002     0.000     0.000     1175   Array#join 
+  0.06      0.002     0.002     0.000     0.000     1120   String#downcase 
+  0.06      0.005     0.002     0.000     0.003      463   <Module::RSpec::Matchers::EnglishPhrasing>#split_words 
+  0.06      0.028     0.002     0.000     0.026      642   <Module::RSpec::Mocks>#setup 
+  0.06      0.003     0.002     0.000     0.001      418   RSpec::Core::Example#location_description 
+  0.06      0.002     0.002     0.000     0.000      642   Hash#hash 
+  0.06      0.002     0.002     0.000     0.000     2062   String#* 
+  0.06      0.002     0.002     0.000     0.000      642   RSpec::Mocks::OrderGroup#initialize 
+  0.06      0.009     0.002     0.000     0.007      642   RSpec::Core::FilterableItemRepository::QueryOptimized#applicable_metadata_from 
+  0.06      0.002     0.002     0.000     0.000      986   Mutex#lock 
+  0.06      0.002     0.002     0.000     0.000     2568   Thread#[] 
+  0.06      0.428     0.002     0.000     0.426      461   <Module::RSpec::Support::ObjectFormatter>#format 
+  0.06      0.002     0.002     0.000     0.000      642   IO#tty? 
+  0.06      0.448     0.002     0.000     0.446      418   <Module::RSpec::Matchers>#last_description 
+  0.06      0.010     0.002     0.000     0.008      642   <Class::RSpec::Core::ExampleGroup>#fail_fast? 
+  0.06      0.002     0.002     0.000     0.000      881   Symbol#to_s 
+  0.06      0.003     0.002     0.000     0.001      323   RSpec::Mocks::ReentrantMutex#enter 
+  0.05      0.004     0.001     0.000     0.002      220   RSpec::Matchers#be_a 
+  0.05      0.001     0.001     0.000     0.000      642   Hash#delete 
+  0.05      0.011     0.001     0.000     0.010      642   RSpec::Core::MockingAdapters::RSpec#verify_mocks_for_rspec 
+  0.05      0.001     0.001     0.000     0.000      702   RSpec::Core::Notifications::GroupNotification#group 
+  0.05      0.002     0.001     0.000     0.001      323   RSpec::Mocks::ReentrantMutex#exit 
+  0.05      0.025     0.001     0.000     0.024      291   RSpec::Matchers::BuiltIn::Include#excluded_from_actual 
+  0.05      0.029     0.001     0.000     0.028      665   Enumerable#each_with_object 
+  0.05      0.001     0.001     0.000     0.000      642   Fixnum#fdiv 
+  0.05      0.002     0.001     0.000     0.000      717   <Class::RSpec::Expectations::LegacyMatcherAdapter::RSpec1>#interface_matches? 
+  0.05      0.001     0.001     0.000     0.000      717   RSpec::Expectations::ExpectationTarget#initialize 
+  0.05      0.026     0.001     0.000     0.024      642   <Module::RSpec::Core::MetadataFilter>#apply? 
+  0.05      0.050     0.001     0.000     0.049      630   <Class::RSpec::Expectations::PositiveExpectationHandler>#handle_matcher 
+  0.05      0.001     0.001     0.000     0.000      665   Hash#values 
+  0.05      0.011     0.001     0.000     0.010      642   RSpec::Core::Configuration#color_enabled? 
+  0.05      0.026     0.001     0.000     0.025      642   RSpec::Mocks::RootSpace#new_scope 
+  0.05      0.117     0.001     0.000     0.116      247   RSpec::Matchers::BuiltIn::BaseMatcher#description 
+  0.04      0.021     0.001     0.000     0.020      642   <Module::RSpec::Core::MetadataFilter>#filter_applies? 
+  0.04      0.004     0.001     0.000     0.003      642   Time#- 
+  0.04      0.001     0.001     0.000     0.000      642   RSpec::Core::Configuration#hooks 
+  0.04      0.001     0.001     0.000     0.000      461   <Module::RSpec::Support>#matcher_definitions 
+  0.04      0.001     0.001     0.000     0.000      731   Enumerator#initialize 
+  0.04      0.002     0.001     0.000     0.001      642   RSpec::Core::Example#mocks_need_verification? 
+  0.04      0.027     0.001     0.000     0.026      291   RSpec::Matchers::BuiltIn::Include#perform_match 
+  0.04      0.001     0.001     0.000     0.000     1036   BasicObject#equal? 
+  0.04      0.001     0.001     0.000     0.000      702   RSpec::Core::Formatters::DocumentationFormatter#example_group_finished 
+  0.04      0.008     0.001     0.000     0.007      109   RSpec::Core::ExampleGroup#method_missing 
+  0.04      0.002     0.001     0.000     0.001      642   Numeric#quo 
+  0.04      0.452     0.001     0.000     0.451      418   RSpec::Core::Example#generate_description 
+  0.04      0.002     0.001     0.000     0.001      220   RSpec::Matchers#be_a_kind_of 
+  0.04      0.013     0.001     0.000     0.012      461   <Module::RSpec::Support>#is_a_matcher? 
+  0.04      0.048     0.001     0.000     0.047      837  *Enumerator::Generator#each 
+  0.03      0.001     0.001     0.000     0.000      484   BasicObject#__id__ 
+  0.03      0.001     0.001     0.000     0.000      901   Range#begin 
+  0.03      0.001     0.001     0.000     0.001       24   RSpec::Mocks::ExampleMethods#receive 
+  0.03      0.001     0.001     0.000     0.000     1284   Fixnum#+ 
+  0.03      0.002     0.001     0.000     0.002      138   RSpec::Mocks::AnyInstance::Recorder#initialize 
+  0.03      0.001     0.001     0.000     0.000     1481   Kernel#respond_to_missing? 
+  0.03      0.001     0.001     0.000     0.000      220   RSpec::Matchers::BuiltIn::BeAKindOf#match 
+  0.03      0.001     0.001     0.000     0.000      316   RSpec::Matchers::BuiltIn::BaseMatcher#initialize 
+  0.03      0.001     0.001     0.000     0.000      327   RSpec::Matchers::BuiltIn::BePredicate#predicate 
+  0.03      0.018     0.001     0.000     0.017       87   Cosmic::Person#inspect 
+  0.03      0.002     0.001     0.000     0.002      316   RSpec::Matchers::BuiltIn::BaseMatcher#matches? 
+  0.03      0.001     0.001     0.000     0.000      208   <Class::RSpec::Mocks::MethodReference>#instance_method_visibility_for 
+  0.03      0.001     0.001     0.000     0.000      642   Array#pop 
+  0.03      0.001     0.001     0.000     0.000      420   RSpec::Matchers::BuiltIn::Include#comparing_hash_to_a_subset? 
+  0.03      0.001     0.001     0.000     0.000      642   Float#to_f 
+  0.03      0.002     0.001     0.000     0.002       40   String#each_line 
+  0.03      0.002     0.001     0.000     0.001      188   Cosmic::Building#building_type 
+  0.03      0.002     0.001     0.000     0.001      138   RSpec::Mocks::AnyInstance::Recorder#notify_received_message 
+  0.03      0.001     0.001     0.000     0.000      420   RSpec::Matchers::BuiltIn::Include#comparing_hash_keys? 
+  0.03      0.011     0.001     0.000     0.011      276   RSpec::Mocks::Space#any_instance_recorder_for 
+  0.03      0.027     0.001     0.000     0.027      291   RSpec::Matchers::BuiltIn::Include#matches? 
+  0.02      0.001     0.001     0.000     0.000      374   Kernel#Array 
+  0.02      0.019     0.001     0.000     0.018      420   RSpec::Matchers::BuiltIn::Include#actual_collection_includes? 
+  0.02      0.001     0.001     0.000     0.000      642   Hash#any? 
+  0.02      0.001     0.001     0.000     0.000      161   RSpec::Mocks::AnyInstance::Recorder#build_alias_method_name 
+  0.02      0.001     0.001     0.000     0.000      332   <Class::RSpec::Expectations::PositiveExpectationHandler>#verb 
+  0.02      0.237     0.001     0.000     0.237      131   Cosmic::Building#naming_dictionary 
+  0.02      0.003     0.001     0.000     0.003      179   Cosmic::Person#name_elements 
+  0.02      0.001     0.001     0.000     0.000      205   <Class::Cosmic::Galaxy>#parent_type 
+  0.02      0.001     0.001     0.000     0.000      881   Kernel#is_a? 
+  0.02      0.001     0.001     0.000     0.000      616   String#include? 
+  0.02      0.001     0.001     0.000     0.000      642   Hash#key? 
+  0.02      0.001     0.001     0.000     0.000      300   Hash#initialize 
+  0.02      0.051     0.001     0.000     0.050      905  *Enumerator#each 
+  0.02      0.001     0.001     0.000     0.000      186   Array#compact 
+  0.02      0.001     0.001     0.000     0.000      227   <Class::Cosmic::Supercluster>#parent_type 
+  0.02      0.001     0.001     0.000     0.000      183   <Class::Cosmic::Sun>#parent_type 
+  0.02      0.001     0.001     0.000     0.000      216   <Class::Cosmic::Constellation>#parent_type 
+  0.02      0.002     0.001     0.000     0.002      109   RSpec::Matchers::BuiltIn::BePredicate#initialize 
+  0.02      0.001     0.001     0.000     0.000       48   RSpec::Matchers#eql 
+  0.02      0.003     0.001     0.000     0.002      109   RSpec::Matchers::BuiltIn::BePredicate#predicate_matches? 
+  0.02      0.000     0.000     0.000     0.000      161   <Class::Cosmic::Continent>#parent_type 
+  0.02      0.000     0.000     0.000     0.000      264   String#=~ 
+  0.02      0.000     0.000     0.000     0.000      194   <Class::Cosmic::Quadrant>#parent_type 
+  0.02      0.001     0.000     0.000     0.001      116   Module#class_exec 
+  0.02      0.003     0.000     0.000     0.002      116   <Class::Cosmic::Profession>#generate 
+  0.02      0.000     0.000     0.000     0.000      291   RSpec::Matchers::BuiltIn::Include#initialize 
+  0.02      0.000     0.000     0.000     0.000      172   <Class::Cosmic::Planet>#parent_type 
+  0.02      0.002     0.000     0.000     0.002      121   Enumerable#find 
+  0.02      0.001     0.000     0.000     0.000      108   Module#define_method 
+  0.02      0.000     0.000     0.000     0.000      327   String#intern 
+  0.02      0.666     0.000     0.000     0.665      806  *Cosmic::Printer#conduct_narration 
+  0.02      0.000     0.000     0.000     0.000        3   RSpec::Matchers#equal 
+  0.02      0.003     0.000     0.000     0.003       95   Cosmic::Person#profession 
+  0.02      0.001     0.000     0.000     0.001      109   RSpec::Matchers::BuiltIn::BePredicate#prefix_and_expected 
+  0.02      0.000     0.000     0.000     0.000      201   Module#inspect 
+  0.02      0.008     0.000     0.000     0.008       23   RSpec::Mocks::Space#any_instance_proxy_for 
+  0.02      0.001     0.000     0.000     0.000       23   RSpec::Matchers#eq 
+  0.02      0.001     0.000     0.000     0.000       24   RSpec::Mocks::MessageExpectation::ImplementationDetails#initialize 
+  0.02      0.000     0.000     0.000     0.000      642   Hash#eql? 
+  0.02      0.000     0.000     0.000     0.000      139   <Class::Cosmic::Nation>#parent_type 
+  0.02      0.000     0.000     0.000     0.000      140   Array#first 
+  0.02      0.000     0.000     0.000     0.000      360   Module#method_added 
+  0.02      0.000     0.000     0.000     0.000      150   <Class::Cosmic::Zone>#parent_type 
+  0.01      0.004     0.000     0.000     0.004      108   RSpec::Matchers::BuiltIn::BePredicate#description 
+  0.01      0.000     0.000     0.000     0.000      109   Regexp#=== 
+  0.01      0.001     0.000     0.000     0.000      247   <Class::RSpec::Matchers::BuiltIn::BaseMatcher>#matcher_name 
+  0.01      0.001     0.000     0.000     0.001      108   RSpec::Matchers::BuiltIn::BeHelpers#args_to_sentence 
+  0.01      0.000     0.000     0.000     0.000      659   BasicObject#== 
+  0.01      0.001     0.000     0.000     0.000      230   RSpec::Mocks::AnyInstance::Recorder#ancestor_is_an_observer? 
+  0.01      0.000     0.000     0.000     0.000      128   <Class::Cosmic::Region>#parent_type 
+  0.01      0.000     0.000     0.000     0.000      117   <Class::Cosmic::Prefecture>#parent_type 
+  0.01      0.667     0.000     0.000     0.667       88   Cosmic::Printable#narrate 
+  0.01      0.000     0.000     0.000     0.000      642   Fixnum#- 
+  0.01      0.001     0.000     0.000     0.001      129   <Class::Cosmic::Profession>#dictionary_for_type 
+  0.01      0.000     0.000     0.000     0.000       20   File#initialize 
+  0.01      0.000     0.000     0.000     0.000      109   Regexp#match 
+  0.01      0.000     0.000     0.000     0.000      211   RSpec::Matchers::Composable#should_enumerate? 
+  0.01      0.002     0.000     0.000     0.001       89   Cosmic::Person#forename_dictionary 
+  0.01      0.001     0.000     0.000     0.000       88   Cosmic::Printable#printer 
+  0.01      0.005     0.000     0.000     0.005       87   RSpec::Expectations::ExpectationTarget#not_to 
+  0.01      0.001     0.000     0.000     0.001      138   RSpec::Mocks::AnyInstance::MessageChains#each_unfulfilled_expectation_matching 
+  0.01      0.001     0.000     0.000     0.000      180   Cosmic::Person#gender 
+  0.01      0.001     0.000     0.000     0.001      138   RSpec::Mocks::AnyInstance::MessageChains#initialize 
+  0.01      0.003     0.000     0.000     0.003      138   RSpec::Mocks::Space#any_instance_recorder_not_found_for 
+  0.01      0.002     0.000     0.000     0.002       90   Cosmic::Person#aspects 
+  0.01      0.002     0.000     0.000     0.002      211   <Module::RSpec::Matchers>#is_a_describable_matcher? 
+  0.01      0.000     0.000     0.000     0.000      106   <Class::Cosmic::Settlement>#parent_type 
+  0.01      0.002     0.000     0.000     0.001      109   RSpec::Matchers::BuiltIn::BePredicate#parse_expected 
+  0.01      0.670     0.000     0.000     0.669       86   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceMethods::Narrate::LetDefinitions#narration 
+  0.01      0.000     0.000     0.000     0.000      350   Array#include? 
+  0.01      0.004     0.000     0.000     0.004      211  *RSpec::Matchers::Composable#surface_descriptions_in 
+  0.01      0.005     0.000     0.000     0.005       27   RSpec::Mocks::Proxy#message_received 
+  0.01      0.002     0.000     0.000     0.002       24   Kernel#loop 
+  0.01      0.007     0.000     0.000     0.007       67   Cosmic::Model#siblings 
+  0.01      0.001     0.000     0.000     0.000      264   Kernel#!~ 
+  0.01      0.001     0.000     0.000     0.001       91   Cosmic::Person#personality 
+  0.01      0.001     0.000     0.000     0.000      138   RSpec::Mocks::AnyInstance::Recorder#verify 
+  0.01      0.001     0.000     0.000     0.001       78   RSpec::Mocks::Proxy#method_double_for 
+  0.01      0.000     0.000     0.000     0.000       95   <Class::Cosmic::Sector>#parent_type 
+  0.01      0.000     0.000     0.000     0.000       92   Module#alias_method 
+  0.01      0.001     0.000     0.000     0.001      109   RSpec::Matchers::BuiltIn::BePredicate#predicate_accessible? 
+  0.01      0.000     0.000     0.000     0.000       84   <Class::Cosmic::Neighborhood>#parent_type 
+  0.01      0.000     0.000     0.000     0.000      230   Kernel#lambda 
+  0.01      0.000     0.000     0.000     0.000      102   Symbol#to_sym 
+  0.01      0.001     0.000     0.000     0.001       24   RSpec::Mocks::MessageExpectation#and_return 
+  0.01      0.000     0.000     0.000     0.000      152   <Class::Cosmic::Building>#child_type 
+  0.01      0.145     0.000     0.000     0.145       56   Cosmic::Building#inspect 
+  0.01      0.000     0.000     0.000     0.000       93   RSpec::Mocks::MethodDouble#object_singleton_class 
+  0.01      0.001     0.000     0.000     0.001       42   Cosmic::Model#leaves 
+  0.01      0.001     0.000     0.000     0.000       47   <Class::RSpec::Mocks::Proxy>#prepended_modules_of 
+  0.01      0.024     0.000     0.000     0.024       44   Cosmic::Model#root 
+  0.01      0.002     0.000     0.000     0.001       65   RSpec::Matchers::BuiltIn::BePredicate#does_not_match? 
+  0.01      0.000     0.000     0.000     0.000      109   Array#shift 
+  0.01      0.000     0.000     0.000     0.000      115   Module#remove_method 
+  0.01      0.000     0.000     0.000     0.000      208   Module#public_method_defined? 
+  0.01      0.001     0.000     0.000     0.001       27   RSpec::Mocks::MessageExpectation::ImplementationDetails#invoke_incrementing_actual_calls_by 
+  0.01      0.000     0.000     0.000     0.000       20   IO#read 
+  0.01      0.666     0.000     0.000     0.666       88   Cosmic::Printer#narrate 
+  0.01      0.012     0.000     0.000     0.011       23   RSpec::Mocks::AnyInstance::PositiveExpectationChain#create_message_expectation_on 
+  0.01      0.001     0.000     0.000     0.001      108   RSpec::Matchers::BuiltIn::BeHelpers#expected_to_sentence 
+  0.01      0.000     0.000     0.000     0.000      264   Thread::Backtrace::Location#path 
+  0.01      0.013     0.000     0.000     0.013       23   RSpec::Mocks::AnyInstance::Recorder#observe! 
+  0.01      0.000     0.000     0.000     0.000       72   <Class::Cosmic::Street>#parent_type 
+  0.01      0.000     0.000     0.000     0.000       62   <Class::Cosmic::Block>#parent_type 
+  0.01      0.003     0.000     0.000     0.003       19   <Class::Cosmic::Dictionary>#load_entries 
+  0.01      0.000     0.000     0.000     0.000      160   <Class::Cosmic::Room>#child_type 
+  0.01      0.001     0.000     0.000     0.001       24   RSpec::Mocks::Space#proxy_not_found_for 
+  0.01      0.000     0.000     0.000     0.000       48   Kernel#caller_locations 
+  0.01      0.001     0.000     0.000     0.001       46   RSpec::Mocks::AnyInstance::Recorder#restore_original_method! 
+  0.01      0.002     0.000     0.000     0.002       87   <Class::RSpec::Expectations::NegativeExpectationHandler>#does_not_match? 
+  0.01      0.000     0.000     0.000     0.000       74   Array#index 
+  0.01      0.001     0.000     0.000     0.001      138   RSpec::Mocks::AnyInstance::Recorder#stop_all_observation! 
+  0.01      0.001     0.000     0.000     0.001       27   RSpec::Mocks::ArgumentListMatcher#resolve_expected_args_based_on 
+  0.01      0.000     0.000     0.000     0.000       69   Module#instance_method 
+  0.01      0.002     0.000     0.000     0.002       23   RSpec::Mocks::PartialDoubleProxy#original_method_handle_for 
+  0.01      0.001     0.000     0.000     0.001      108   RSpec::Matchers::BuiltIn::BePredicate#prefix_to_sentence 
+  0.01      0.224     0.000     0.000     0.224       41   RSpec::Matchers::BuiltIn::Include#readable_list_of 
+  0.01      0.000     0.000     0.000     0.000      116   Cosmic::Profession#initialize 
+  0.01      0.000     0.000     0.000     0.000       24   RSpec::Mocks::MethodDouble#initialize 
+  0.01      0.001     0.000     0.000     0.000       27   RSpec::Mocks::ArgumentListMatcher#replace_any_args_with_splat_of_anything 
+  0.01      0.001     0.000     0.000     0.001       46   RSpec::Mocks::AnyInstance::Recorder#backup_method! 
+  0.01      0.001     0.000     0.000     0.000       92   RSpec::Mocks::AnyInstance::Recorder#public_protected_or_private_method_defined? 
+  0.01      0.001     0.000     0.000     0.001       23   RSpec::Mocks::MethodDouble#restore_original_method 
+  0.01      0.000     0.000     0.000     0.000       51   <Class::Cosmic::Lot>#parent_type 
+  0.01      0.000     0.000     0.000     0.000       24   RSpec::Mocks::Proxy#initialize 
+  0.01      0.000     0.000     0.000     0.000      220   Kernel#kind_of? 
+  0.01      0.000     0.000     0.000     0.000      123   <Class::Cosmic::Lot>#child_type 
+  0.01      0.018     0.000     0.000     0.018      170   Enumerable#include? 
+  0.01      0.005     0.000     0.000     0.004       87   <Class::RSpec::Expectations::NegativeExpectationHandler>#handle_matcher 
+  0.01      0.004     0.000     0.000     0.004       24   RSpec::Mocks::MethodDouble#define_proxy_method 
+  0.01      0.001     0.000     0.000     0.000       30  *<Module::RSpec::Support::FuzzyMatcher>#values_match? 
+  0.01      0.001     0.000     0.000     0.000       46   <Class::RSpec::Mocks::MethodReference>#method_visibility_for 
+  0.01      0.010     0.000     0.000     0.010       24   RSpec::Mocks::Proxy#add_message_expectation 
+  0.01      0.000     0.000     0.000     0.000      109   MatchData#captures 
+  0.01      0.018     0.000     0.000     0.018       23   RSpec::Mocks::AnyInstance::Recorder#playback! 
+  0.01      0.000     0.000     0.000     0.000       24   RSpec::Mocks::InstanceMethodStasher#initialize 
+  0.01      0.003     0.000     0.000     0.003       47   RSpec::Mocks::Space#proxy_for 
+  0.01      0.003     0.000     0.000     0.002       44   RSpec::Matchers::BuiltIn::BePredicate#matches? 
+  0.01      0.001     0.000     0.000     0.001       23   RSpec::Mocks::Space#any_instance_recorders_from_ancestry_of 
+  0.01      0.002     0.000     0.000     0.002       46   RSpec::Mocks::AnyInstance::Recorder#restore_method! 
+  0.01      0.000     0.000     0.000     0.000       46   Kernel#tap 
+  0.01      0.000     0.000     0.000     0.000       45   <Class::Cosmic::Building>#parent_type 
+  0.01      0.000     0.000     0.000     0.000       88   Cosmic::Printable#printer_class 
+  0.01      0.001     0.000     0.000     0.001       48   RSpec::Mocks::MethodDouble#visibility 
+  0.01      0.016     0.000     0.000     0.016       24   RSpec::Mocks::Matchers::Receive#setup_method_substitute 
+  0.01      0.000     0.000     0.000     0.000      119   <Class::Cosmic::Block>#child_type 
+  0.01      0.003     0.000     0.000     0.002       47   Enumerable#map 
+  0.01      0.001     0.000     0.000     0.001       47   RSpec::Mocks::MethodDouble#definition_target 
+  0.01      0.007     0.000     0.000     0.007       24   RSpec::Mocks::MethodDouble#add_expectation 
+  0.01      0.000     0.000     0.000     0.000       48   RSpec::Matchers::BuiltIn::Eql#match 
+  0.01      0.014     0.000     0.000     0.014       23   RSpec::Mocks::AnyInstance::Recorder#should_receive 
+  0.01      0.000     0.000     0.000     0.000       69   UnboundMethod#owner 
+  0.01      0.000     0.000     0.000     0.000      116   <Class::Cosmic::Neighborhood>#child_type 
+  0.01      0.000     0.000     0.000     0.000       46   RSpec::Mocks::AnyInstance::Chain#messages 
+  0.01      0.000     0.000     0.000     0.000       24   Array#eql? 
+  0.01      0.000     0.000     0.000     0.000       69   <Module::RSpec::Mocks>#configuration 
+  0.01      0.000     0.000     0.000     0.000       81   Array#count 
+  0.01      0.000     0.000     0.000     0.000       23   RSpec::Mocks::InstanceMethodStasher#method_owned_by_klass? 
+  0.01      0.000     0.000     0.000     0.000      111   <Class::Cosmic::Sector>#child_type 
+  0.01      0.006     0.000     0.000     0.006       24   RSpec::Mocks::MethodDouble#configure_method 
+  0.01      0.001     0.000     0.000     0.001       90   Cosmic::Person#surname_dictionary 
+  0.01      0.000     0.000     0.000     0.000       98   <Class::Cosmic::Prefecture>#child_type 
+  0.01      0.000     0.000     0.000     0.000       54   RSpec::Mocks::Implementation#actions 
+  0.01      0.014     0.000     0.000     0.014       23   RSpec::Mocks::AnyInstance::Proxy#perform_proxying 
+  0.01      0.000     0.000     0.000     0.000      106   <Class::Cosmic::Street>#child_type 
+  0.01      0.000     0.000     0.000     0.000       47   Array#to_a 
+  0.01      0.000     0.000     0.000     0.000       27   RSpec::Mocks::Proxy#record_message_received 
+  0.01      0.000     0.000     0.000     0.000       86   <Class::RSpec::Expectations::NegativeExpectationHandler>#verb 
+  0.00      0.002     0.000     0.000     0.002       23   RSpec::Mocks::AnyInstance::Recorder#received_expected_message! 
+  0.00      0.000     0.000     0.000     0.000       42   Enumerable#lazy 
+  0.00      0.000     0.000     0.000     0.000       66   Range#end 
+  0.00      0.000     0.000     0.000     0.000       96   <Class::Cosmic::Continent>#child_type 
+  0.00      0.000     0.000     0.000     0.000      101   <Class::Cosmic::Nation>#child_type 
+  0.00      0.000     0.000     0.000     0.000       88   Cosmic::Printer#initialize 
+  0.00      0.008     0.000     0.000     0.007       23   RSpec::Mocks::PartialDoubleProxy#message_received 
+  0.00      0.001     0.000     0.000     0.001       21   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::LetDefinitions#parents_children 
+  0.00      0.224     0.000     0.000     0.224       41   RSpec::Matchers::BuiltIn::Include#description 
+  0.00      0.000     0.000     0.000     0.000       24   Thread::Backtrace::Location#to_s 
+  0.00      0.000     0.000     0.000     0.000       47   RSpec::Mocks::Space#id_for 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::Chain#record 
+  0.00      0.000     0.000     0.000     0.000       42   Enumerator::Lazy#select 
+  0.00      0.001     0.000     0.000     0.001       26   RSpec::Mocks::Matchers::ExpectationCustomization#playback_onto 
+  0.00      0.001     0.000     0.000     0.001       23   RSpec::Mocks::PartialDoubleProxy#reset 
+  0.00      0.000     0.000     0.000     0.000       99   <Class::Cosmic::Region>#child_type 
+  0.00      0.001     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::Recorder#allow_no_prepended_module_definition_of 
+  0.00      0.001     0.000     0.000     0.001       46   RSpec::Mocks::PartialDoubleProxy#visibility_for 
+  0.00      0.000     0.000     0.000     0.000      100   <Class::Cosmic::Zone>#child_type 
+  0.00      0.000     0.000     0.000     0.000       84   <Class::Cosmic::Sun>#child_type 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::ExpectationChain#initialize 
+  0.00      0.000     0.000     0.000     0.000       93   <Class::Cosmic::Planet>#child_type 
+  0.00      0.000     0.000     0.000     0.000       96   <Class::Cosmic::Settlement>#child_type 
+  0.00      0.012     0.000     0.000     0.012      253  *RSpec::Mocks::AnyInstance::Recorder#already_observing? 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::Matchers::Receive#move_block_to_last_customization 
+  0.00      0.000     0.000     0.000     0.000       36   IO#set_encoding 
+  0.00      0.001     0.000     0.000     0.001       23   RSpec::Mocks::MethodDouble#reset 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::MethodDouble#restore_original_visibility 
+  0.00      0.000     0.000     0.000     0.000       99   Array#[] 
+  0.00      0.000     0.000     0.000     0.000       23   Hash#merge 
+  0.00      0.000     0.000     0.000     0.000       70   Array#unshift 
+  0.00      0.004     0.000     0.000     0.004       20   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::LetDefinitions#childrens_children 
+  0.00      0.024     0.000     0.000     0.024       23   RSpec::Mocks::Matchers::Receive#setup_any_instance_method_substitute 
+  0.00      0.000     0.000     0.000     0.000       47   RSpec::Mocks::InstanceMethodStasher#method_defined_on_klass? 
+  0.00      0.000     0.000     0.000     0.000       75   Fixnum#== 
+  0.00      0.003     0.000     0.000     0.002       27   RSpec::Mocks::Proxy#find_best_matching_expectation_for 
+  0.00      0.000     0.000     0.000     0.000       24   Enumerable#max 
+  0.00      0.000     0.000     0.000     0.000       47   Module#public 
+  0.00      0.000     0.000     0.000     0.000       82   <Class::Cosmic::Quadrant>#child_type 
+  0.00      2.682     0.000     0.000     2.682      702  *<Class::RSpec::Core::ExampleGroup>#run 
+  0.00      0.001     0.000     0.000     0.001       23   RSpec::Mocks::AnyInstance::FluentInterfaceProxy#method_missing 
+  0.00      0.000     0.000     0.000     0.000       42   Enumerator::Lazy#initialize 
+  0.00      0.001     0.000     0.000     0.001       24   RSpec::Mocks::MethodDouble#usable_rspec_prepended_module 
+  0.00      0.024     0.000     0.000     0.024       23   RSpec::Mocks::AnyInstanceExpectationTarget#to 
+  0.00      0.001     0.000     0.000     0.001       23   RSpec::Mocks::AnyInstance::Recorder#mark_invoked! 
+  0.00      0.002     0.000     0.000     0.002       44   Enumerable#detect 
+  0.00      0.001     0.000     0.000     0.000       27   RSpec::Mocks::Implementation#call 
+  0.00      0.014     0.000     0.000     0.014       23   RSpec::Mocks::AnyInstance::Proxy#should_receive 
+  0.00      0.013     0.000     0.000     0.013       23   RSpec::Mocks::AnyInstance::Chain#playback! 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::Proxy#prepended_modules_of_singleton_class 
+  0.00      0.000     0.000     0.000     0.000       74   <Class::Cosmic::Supercluster>#child_type 
+  0.00      0.000     0.000     0.000     0.000       22   RSpec::Matchers#be_nil 
+  0.00      0.000     0.000     0.000     0.000       48   RSpec::Mocks::MessageExpectation::ImplementationDetails#ignoring_args? 
+  0.00      0.000     0.000     0.000     0.000       54   Integer#upto 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::MessageChains#raise_if_second_instance_to_receive_message 
+  0.00      0.000     0.000     0.000     0.000       80   <Class::Cosmic::Galaxy>#child_type 
+  0.00      0.000     0.000     0.000     0.000       27   <Module::RSpec::Support::FuzzyMatcher>#arrays_match? 
+  0.00      0.001     0.000     0.000     0.001       23   RSpec::Mocks::PartialDoubleProxy#any_instance_class_recorder_observing_method? 
+  0.00      0.000     0.000     0.000     0.000       41   RSpec::Matchers::BuiltIn::BaseMatcher::HashFormatting#improve_hash_formatting 
+  0.00      0.027     0.000     0.000     0.027       24   RSpec::Core::Example#instance_exec 
+  0.00      0.003     0.000     0.000     0.003       27   RSpec::Mocks::Proxy#find_matching_expectation 
+  0.00      0.013     0.000     0.000     0.013       23   RSpec::Mocks::AnyInstance::MessageChains#playback! 
+  0.00      0.000     0.000     0.000     0.000       26   RSpec::Mocks::Matchers::Receive#ordered 
+  0.00      0.000     0.000     0.000     0.000       42   Enumerator::Generator#initialize 
+  0.00      0.002     0.000     0.000     0.002       27   RSpec::Mocks::ArgumentListMatcher#args_match? 
+  0.00      0.000     0.000     0.000     0.000       64   Cosmic::Leaf#leaf_node? 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::MethodDouble#clear 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::Chain#initialize 
+  0.00      0.000     0.000     0.000     0.000       92   Module#method_removed 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::MessageChains#add 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::MessageExpectation::ImplementationDetails#and_yield_receiver_to_implementation 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::MethodDouble#remove_method_from_definition_target 
+  0.00      0.000     0.000     0.000     0.000       51   RSpec::Mocks::MessageExpectation::ImplementationDetails#negative? 
+  0.00      0.000     0.000     0.000     0.000       23   Cosmic::Model#age 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::Matchers::Receive#initialize 
+  0.00      0.024     0.000     0.000     0.024       23   RSpec::Mocks::TargetBase#define_matcher 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::MessageExpectation::ImplementationDetails#unadvise 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::AndReturnImplementation#call 
+  0.00      0.008     0.000     0.000     0.008       27   RSpec::Mocks::MethodDouble#proxy_method_invoked 
+  0.00      0.012     0.000     0.000     0.012      230  *RSpec::Mocks::AnyInstance::Recorder#super_class_observing? 
+  0.00      0.000     0.000     0.000     0.000       23   <Module::RSpec::Support>#method_handle_for 
+  0.00      0.002     0.000     0.000     0.002       24   RSpec::Mocks::MethodDouble#original_method 
+  0.00      0.024     0.000     0.000     0.024       23   RSpec::Mocks::Matchers::Receive#setup_any_instance_expectation 
+  0.00      0.000     0.000     0.000     0.000       73   <Class::Cosmic::Constellation>#child_type 
+  0.00      0.001     0.000     0.000     0.001       24   RSpec::Mocks::InstanceMethodStasher#method_defined_directly_on_klass? 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::Space#proxies_of 
+  0.00      0.000     0.000     0.000     0.000       26   RSpec::Mocks::Matchers::ExpectationCustomization#initialize 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::Implementation#present? 
+  0.00      0.000     0.000     0.000     0.000       27   Kernel#initialize_dup 
+  0.00      0.000     0.000     0.000     0.000       27   Array#== 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::TargetBase#matcher_allowed? 
+  0.00      0.003     0.000     0.000     0.002       24   RSpec::Mocks::MethodDouble#original_implementation_callable 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::Proxy#messages_arg_list 
+  0.00      0.001     0.000     0.000     0.001       27   RSpec::Mocks::MessageExpectation::ImplementationDetails#invoke 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::Proxy#find_matching_method_stub 
+  0.00      0.003     0.000     0.000     0.002       24   <Class::RSpec::CallerFilter>#first_non_rspec_line 
+  0.00      0.000     0.000     0.000     0.000       75   Symbol#== 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::MessageExpectation::ImplementationDetails#called_max_times? 
+  0.00      0.002     0.000     0.000     0.002       27   RSpec::Mocks::MessageExpectation::ImplementationDetails#matches? 
+  0.00      0.000     0.000     0.000     0.000       25   RSpec::Mocks::MessageExpectation::ImplementationDetails#raise_already_invoked_error_if_necessary 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000       27   Array#zip 
+  0.00      0.000     0.000     0.000     0.000       46   RSpec::Mocks::Configuration#verify_partial_doubles? 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::OrderGroup#handle_order_constraint 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::MessageExpectation::ImplementationDetails#verify_messages_received 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::Proxy#reset 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::MessageExpectation::ImplementationDetails#expected_messages_received? 
+  0.00      0.000     0.000     0.000     0.000        1   Kernel#methods 
+  0.00      0.000     0.000     0.000     0.000       23   String#inspect 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::Chain::Customizations#at_most 
+  0.00      0.001     0.000     0.000     0.001       24   RSpec::Mocks::InstanceMethodStasher#stash 
+  0.00      0.000     0.000     0.000     0.000       20   <Class::IO>#open 
+  0.00      0.000     0.000     0.000     0.000       27   <Class::RSpec::Mocks::Proxy::SpecificMessage>#new 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::MethodDouble#verify 
+  0.00      0.001     0.000     0.000     0.000       24   RSpec::Mocks::Proxy#verify 
+  0.00      0.000     0.000     0.000     0.000       22   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Name::LetDefinitions#expected_name 
+  0.00      0.000     0.000     0.000     0.000       27   Array#delete_if 
+  0.00      0.000     0.000     0.000     0.000       22   RSpec::Matchers::BuiltIn::BeNil#match 
+  0.00      0.029     0.000     0.000     0.029       21   Enumerable#first 
+  0.00      0.000     0.000     0.000     0.000       23   Kernel#method 
+  0.00      0.000     0.000     0.000     0.000       46   RSpec::Mocks::AnyInstance::FluentInterfaceProxy#initialize 
+  0.00      0.027     0.000     0.000     0.027       23   RSpec::Core::Hooks::BeforeHook#run 
+  0.00      0.100     0.000     0.000     0.100       22   RSpec::Matchers::BuiltIn::Eq#description 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::MessageExpectation::ImplementationDetails#terminal_implementation_action= 
+  0.00      0.000     0.000     0.000     0.000       46   RSpec::Mocks::AnyInstance::ExpectationChain#expectation_fulfilled? 
+  0.00      0.000     0.000     0.000     0.000       21   Enumerator::Yielder#yield 
+  0.00      0.000     0.000     0.000     0.000       25   Class#inherited 
+  0.00      0.000     0.000     0.000     0.000       22   Cosmic::Dictionary#initialize 
+  0.00      0.000     0.000     0.000     0.000       48   Kernel#__method__ 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::MessageExpectation::ImplementationDetails#similar_messages 
+  0.00      0.000     0.000     0.000     0.000       26   BasicObject#singleton_method_added 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::ExampleMethods#expect_any_instance_of 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::AndReturnImplementation#initialize 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Matchers::BuiltIn::Eq#match 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::TargetBase#initialize 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::OrderGroup#invoked 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::MessageChains#has_expectation? 
+  0.00      0.000     0.000     0.000     0.000       19   <Class::Cosmic::Dictionary>#path_to_data_files 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::MethodDouble#message_expectation_class 
+  0.00      0.000     0.000     0.000     0.000      109   String#eql? 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::Proxy#initialize 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::ErrorGenerator#initialize 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::MessageChains#received_expected_message! 
+  0.00      0.000     0.000     0.000     0.000       64   Array#empty? 
+  0.00      0.000     0.000     0.000     0.000       23   Hash#initialize_copy 
+  0.00      0.000     0.000     0.000     0.000       70   Array#clear 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::Proxy#null_object? 
+  0.00      0.000     0.000     0.000     0.000       27   BasicObject#!= 
+  0.00      0.100     0.000     0.000     0.100       22   RSpec::Matchers::BuiltIn::BaseMatcher#expected_formatted 
+  0.00      0.001     0.000     0.000     0.001       26   RSpec::ExampleGroups::CosmicProfession::GeneratingProfessionsInTheFieldOf::Transport::LetDefinitions#subject 
+  0.00      0.000     0.000     0.000     0.000       23   Method#call 
+  0.00      0.000     0.000     0.000     0.000       23   UnboundMethod#bind 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::OrderGroup#register 
+  0.00      0.000     0.000     0.000     0.000       19   <Class::Cosmic::Room>#parent_type 
+  0.00      0.000     0.000     0.000     0.000       23   BasicObject#singleton_method_removed 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::MessageChains#all_expectations_fulfilled? 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::ExpectationChain#verify_invocation_order 
+  0.00      0.006     0.000     0.000     0.006       10   <Module::RSpec::Support>#require_rspec_expectations 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::Configuration#yield_receiver_to_any_instance_implementation_blocks? 
+  0.00      0.000     0.000     0.000     0.000       25   RSpec::Mocks::MessageExpectation::ImplementationDetails#has_been_invoked? 
+  0.00      0.000     0.000     0.000     0.000       26   RSpec::Mocks::MessageExpectation::ImplementationDetails#inner_implementation_action= 
+  0.00      0.000     0.000     0.000     0.000       37   <Class::Cosmic::Universe>#child_type 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::MessageExpectation::ImplementationDetails#yield_receiver_to_implementation_block? 
+  0.00      0.000     0.000     0.000     0.000       27   RSpec::Mocks::MessageExpectation::ImplementationDetails#ordered? 
+  0.00      0.000     0.000     0.000     0.000       66   Kernel#eql? 
+  0.00      0.000     0.000     0.000     0.000        8   String#gsub! 
+  0.00      0.000     0.000     0.000     0.000        4   <Class::RSpec::Matchers::BuiltIn::BaseMatcher>#underscore 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::AnyInstance::Chain#expectation_fulfilled! 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000       14   <Class::Cosmic::Person>#parent_type 
+  0.00      0.000     0.000     0.000     0.000       23   String#start_with? 
+  0.00      0.001     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000       24   Kernel#block_given? 
+  0.00      0.000     0.000     0.000     0.000       21   Module#private 
+  0.00      0.000     0.000     0.000     0.000       23   RSpec::Mocks::InstanceMethodStasher#method_is_stashed? 
+  0.00      0.000     0.000     0.000     0.000       24   RSpec::Mocks::MessageExpectation::ImplementationDetails#matches_exact_count? 
+  0.00      0.001     0.000     0.000     0.001       21   Enumerable#any? 
+  0.00      0.000     0.000     0.000     0.000       24   Fixnum#<=> 
+  0.00      0.000     0.000     0.000     0.000       15   <Module::RSpec::Mocks::AnyInstance::Chain::Customizations>#record 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000       23   Fixnum#zero? 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::InstanceMethods::NamingDictionary::LetDefinitions#parent 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.003     0.000     0.000     0.003        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000       23   Kernel#frozen? 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicDictionary::Of::LetDefinitions#expected_entries 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.002     0.000     0.000     0.002        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      2.682     0.000     0.000     2.682    14843  *Array#map 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::ClassLeafNode#is_expected 
+  0.00      0.002     0.000     0.000     0.002        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Module#attr_reader 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000       17   Module#method_defined? 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.001     0.000     0.000     0.001        2   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceMethods::Narrate::LetDefinitions#narration 
+  0.00      0.001     0.000     0.000     0.001        4   Unknown#name_elements 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Fixnum#inspect 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        2   RSpec::ExampleGroups::CosmicPerson::LetDefinitions#personality 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        3   RSpec::Matchers::BuiltIn::Equal#match 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        4   Module#include 
+  0.00      0.002     0.000     0.000     0.002        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.002     0.000     0.000     0.002        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.001     0.000     0.000     0.000        3   RSpec::Matchers#be 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::TestDoubleProxy#reset 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      2.682     0.000     0.000     2.682        1   RSpec::Core::Configuration#with_suite_hooks 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        4   Kernel#dup 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.011     0.000     0.000     0.011        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.010     0.000     0.000     0.010        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRoom::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::Mocks::Matchers::Receive#setup_expectation 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.002     0.000     0.000     0.002        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::MessageExpectation#exactly 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::ExampleMethods#double 
+  0.00      0.000     0.000     0.000     0.000        2   RSpec::ExampleGroups::CosmicPerson::LetDefinitions#gender 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicDictionary::MergedWith::AMoreRealisticCase::LetDefinitions#merged 
+  0.00      0.008     0.000     0.000     0.008        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicStreet::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.002     0.000     0.000     0.002        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        4   Module#append_features 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::MessageExpectation#times 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        2   RSpec::ExampleGroups::CosmicPerson::LetDefinitions#profession 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.009     0.000     0.000     0.009        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicLot::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicDictionary::Entries#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::TestDouble#__build_mock_proxy_unless_expired 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.009     0.000     0.000     0.009        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicBlock::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::TestDouble#initialize 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::TestDouble#__build_mock_proxy 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        2   Cosmic::Person#astrology_enthusiast? 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Module#public_instance_methods 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.006     0.000     0.000     0.006        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPrefecture::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.003     0.000     0.000     0.003        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.004     0.000     0.000     0.004        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Module#attr_accessor 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        3   Cosmic::Person#transport? 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.006     0.000     0.000     0.006        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSettlement::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.006     0.000     0.000     0.006        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicRegion::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::LetDefinitions#aspects 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        3   Cosmic::Person#school_bus_driver? 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::LetDefinitions#parents_children 
+  0.00      0.005     0.000     0.000     0.005        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNation::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.002     0.000     0.000     0.002        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Hash#each_pair 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.002     0.000     0.000     0.002        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.005     0.000     0.000     0.005        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicZone::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   <Module::RSpec::Mocks::ExampleMethods>#declare_double 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.003     0.000     0.000     0.003        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        2   RSpec::ExampleGroups::CosmicName::LetDefinitions#components 
+  0.00      0.007     0.000     0.000     0.007        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicNeighborhood::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicPlanet::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   String#to_f 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSun::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.003     0.000     0.000     0.003        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.012     0.000     0.000     0.012        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::ClassParentType#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::LetDefinitions#building_type 
+  0.00      0.000     0.000     0.000     0.000        1   Cosmic::Building#condition 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicPerson::BehavesLikeAModel::InstanceAttributes::Name::LetDefinitions#expected_name 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::MessageExpectation::ImplementationDetails#set_expected_received_count 
+  0.00      0.007     0.000     0.000     0.007        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSector::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::Matchers::Receive#warn_if_any_instance 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::Proxy#original_method_handle_for 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.004     0.000     0.000     0.004        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicContinent::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::TestDouble#assign_stubs 
+  0.00      0.000     0.000     0.000     0.000        1   <Class::Cosmic::Profession>#all 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   TrueClass#inspect 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        2   RSpec::Mocks::Proxy#visibility_for 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Descendants_4#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicGalaxy::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::ClassChildType#is_expected 
+  0.00      0.002     0.000     0.000     0.002        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicQuadrant::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicDictionary::Of::LetDefinitions#taxonomy 
+  0.00      0.000     0.000     0.000     0.000        1   <Class::Proc>#new 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        4   String#downcase! 
+  0.00      0.001     0.000     0.000     0.001        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        4   String#initialize_copy 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        4   String#tr! 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::ChildrenFirstChildren#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Children_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Root_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Age#is_expected 
+  0.00      0.000     0.000     0.000     0.000       14  *Cosmic::Dictionary#each 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Siblings#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Leaves#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        2   Cosmic::Person#female? 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Descendants_3#is_expected 
+  0.00      0.003     0.000     0.000     0.003        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::LeavesFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::Descendants#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Root#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Siblings_3#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Ancestors#is_expected 
+  0.00      0.000     0.000     0.000     0.000        2   Cosmic::Person#witty? 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Core::Hooks::AfterHook#run 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Children#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicDictionary::Of::LetDefinitions#subject 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Descendants_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   <Object::Cosmic::Name>#to_s 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::Mocks::Matchers::Receive#setup_mock_proxy_method_substitute 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   Module#const_get 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::BehavesLikeAModel::InstanceAttributes::ChildrenFirstParent#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Support::RubyFeatures#module_prepends_supported? 
+  0.00      0.002     0.000     0.000     0.002        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicConstellation::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::Siblings_2#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::CosmicBuilding::LetDefinitions#condition 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicSupercluster::BehavesLikeAModel::InstanceAttributes::ChildrenFirst#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.001     0.000     0.000     0.001        1   RSpec::ExampleGroups::Cosmic::ShouldHaveValidModels::CosmicUniverse::BehavesLikeAModel::InstanceAttributes::Name::NameToS#is_expected 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::TestDouble#__raise_expired_error 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Core::Configuration#run_hooks_with 
+  0.00      0.000     0.000     0.000     0.000        1   Module#protected 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Core::Set#merge 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        1   Unknown#to_s 
+  0.00      0.000     0.000     0.000     0.000        3   RSpec::Mocks::ArgumentMatchers::AnyArgMatcher#=== 
+  0.00      0.000     0.000     0.000     0.000        4   Module#included 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Core::Set#initialize 
+  0.00      0.000     0.000     0.000     0.000        1   Module#private_method_defined? 
+  0.00      0.000     0.000     0.000     0.000        1   Module#protected_method_defined? 
+  0.00      0.000     0.000     0.000     0.000        1   RSpec::Mocks::TestDouble#__disallow_further_usage! 
+  0.00      0.000     0.000     0.000     0.000        1   String#empty? 
+
+* indicates recursively called methods
+
+Finished in 3.26 seconds (files took 0.37257 seconds to load)
+642 examples, 0 failures
+

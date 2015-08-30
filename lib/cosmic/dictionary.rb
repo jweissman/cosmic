@@ -10,8 +10,8 @@ module Cosmic
       @entries = entries
     end
 
-    def merged_with(*new_entries)
-      @entries = (@entries + new_entries).flatten.uniq
+    def merged_with(new_entries)
+      @entries = (@entries + new_entries).uniq
     end
 
     class << self

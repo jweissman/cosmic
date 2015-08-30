@@ -1,0 +1,5 @@
+monument
+theater
+concert hall
+cinema
+park

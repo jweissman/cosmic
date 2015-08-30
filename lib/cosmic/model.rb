@@ -11,18 +11,13 @@ module Cosmic
       @name     = name
       @parent   = parent
       @children = children
-
-      @descendants = {}
-      @ancestors   = {}
     end
 
     def age;  @age ||= 0 end
     def name; @name ||= self.generate_name end
 
     def parent
-      return nil if self.class.root_node?
-
-      @parent ||= self.class.generate_parent
+      @parent ||= self.class.root_node? ? nil : self.class.generate_parent
     end
 
     def children

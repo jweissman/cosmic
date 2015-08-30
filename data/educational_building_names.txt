@@ -1,14 +1,11 @@
 amphitheater
 archive
-cinema
 classroom
 college
-concert
 gallery
 gymnasium
 hall
 library
 museum
 school
-theater
 union

@@ -1,11 +1,13 @@
 activist
 art collector
+astrology enthusiast
+beachcomber
 birdwatcher
 bodybuilder
 bowler
 celloist
-chess player
 cheerleader
+chess player
 climber
 cloudwatcher
 coin collector
@@ -32,6 +34,7 @@ kayaker
 knitter
 magician
 meditator
+movie buff
 painter
 parachutist
 people watcher
@@ -46,6 +49,8 @@ roleplayer
 runner
 skater
 soccer player
+stamp collector
+stargazer
 stormchaser
 storyteller
 surfer
@@ -62,5 +67,3 @@ woodworker
 wrestler
 writer
 yoga enthusiast
-beachcomber
-astrology enthusiast

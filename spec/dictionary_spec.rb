@@ -25,12 +25,12 @@ describe Dictionary do
   end
 
   context "#merged_with" do
-    describe 'a simple case' do
-      let(:merged) { subject.merged_with('world') }
-      it 'adds entries' do
-        expect(merged.entries.length).to eq(2)
-      end
-    end
+    # describe 'a simple case' do
+    #   let(:merged) { subject.merged_with('world') }
+    #   it 'adds entries' do
+    #     expect(merged.entries.length).to eq(2)
+    #   end
+    # end
 
     describe 'a more realistic case' do
       let(:merged) { subject.merged_with(['world','all']) }

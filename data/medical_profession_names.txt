@@ -1,7 +1,7 @@
 doctor
 audiologist
 chiropractor
-dentists
+dentist
 dietitian
 medical laboratory scientist
 midwife

@@ -1,8 +1,13 @@
-academia
+agricultural
+commercial
 cultural
+educational
+government
+industrial
+military
 medical
-industry
-public services
-transport
+religious
+residential
 science
 technology
+transport

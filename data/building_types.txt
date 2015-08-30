@@ -1,10 +1,11 @@
 agricultural 
 commercial 
-residential 
+cultural
 educational 
 government 
 industrial 
 military 
 religious 
+residential 
+technology
 transport 
-infrastructure 

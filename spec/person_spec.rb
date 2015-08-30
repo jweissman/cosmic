@@ -48,7 +48,7 @@ describe Person do
     it 'should indicate profession type' do
       expect([true, false]).to include(subject.technology?)
       expect([true, false]).to include(subject.transport?)
-      expect([true, false]).to include(subject.public_services?)
+      expect([true, false]).to include(subject.government?)
     end
 
     it 'should indicate personal qualities' do
