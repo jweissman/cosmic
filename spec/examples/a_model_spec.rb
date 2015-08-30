@@ -106,6 +106,10 @@ shared_examples "a model" do
         expect(narration).to include(subject.send :type)
       end
 
+      it 'should include the subtype' do
+        expect(narration).to include(subject.subtype) if subject.subtype
+      end
+
       unless described_class.leaf_node?
         it 'should describe children names' do
           subject.children.each do |child|

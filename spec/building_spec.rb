@@ -5,7 +5,7 @@ describe Building do
   its('class.child_type') { is_expected.to be(Room) }
   
   let(:condition) { subject.send :condition }
-  let(:building_type) { subject.send :building_type }
+  # let(:building_type) { subject.send :building_type }
 
   context "attributes" do
     it 'has a condition' do
@@ -15,7 +15,7 @@ describe Building do
 
     it 'has a building type' do
       dictionary = Dictionary.of(:building_types)
-      expect(dictionary.entries).to include(building_type)
+      expect(dictionary.entries).to include(subject.subtype)
     end
   end
 

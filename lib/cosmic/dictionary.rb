@@ -15,6 +15,16 @@ module Cosmic
     end
 
     class << self
+      def of(taxonomy)
+        dictionaries[taxonomy] ||= Dictionary.new(load_entries(taxonomy))
+      end
+
+      def exists?(taxonomy)
+        File.exists? taxonomy_path(taxonomy)
+      end
+
+      private
+
       def dictionaries
         @dictionaries ||= {}
       end
@@ -23,16 +33,14 @@ module Cosmic
         @path_to_data_files ||= "data/"
       end
 
-      def of(taxonomy)
-        dictionaries[taxonomy] ||= Dictionary.new(load_entries(taxonomy))
+      def taxonomy_path(taxonomy)
+        "#{path_to_data_files}#{taxonomy}.txt"
       end
 
       def load_entries(taxonomy)
-        path = "#{path_to_data_files}#{taxonomy}.txt"
-        file = File.open(path)
-
+        path  = taxonomy_path(taxonomy)
+        file  = File.open(path)
         lines = file.read.each_line
-
         lines.map(&:strip).to_a 
       end
     end

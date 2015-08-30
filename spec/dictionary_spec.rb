@@ -16,8 +16,24 @@ describe Dictionary do
     end
   end
 
-  describe "#new" do
-    context 'without arguments' do
+  context ".exists?" do
+    let(:existing_taxonomy) { :building_types }
+    let(:inexistent_taxonomy) { :unicorn_horn_types }
+
+    it 'should indicate existing taxonomies' do
+      exists = Dictionary.exists?(existing_taxonomy)
+      expect(exists).to be true
+    end
+
+    it 'should indicate non-existing taxonomies' do
+      exists = Dictionary.exists?(inexistent_taxonomy)
+      expect(exists).to be false
+    end 
+  end
+
+
+  context "#new" do
+    describe 'without arguments' do
       it 'has a single token entry' do
         expect(subject.entries.length).to eq(1)
       end
@@ -25,13 +41,6 @@ describe Dictionary do
   end
 
   context "#merged_with" do
-    # describe 'a simple case' do
-    #   let(:merged) { subject.merged_with('world') }
-    #   it 'adds entries' do
-    #     expect(merged.entries.length).to eq(2)
-    #   end
-    # end
-
     describe 'a more realistic case' do
       let(:merged) { subject.merged_with(['world','all']) }
       its 'adds entries as expected' do

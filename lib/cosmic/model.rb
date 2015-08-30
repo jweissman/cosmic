@@ -2,7 +2,7 @@ module Cosmic
   class Model
     include Printable
 
-    DEFAULT_DEPTH = 2
+    DEFAULT_DEPTH = 8
     MAX_SEARCH_DEPTH = 25
 
     def self.children_range; (2..3) end
@@ -14,6 +14,13 @@ module Cosmic
       @name     = name
       @parent   = parent
       @children = children
+    end
+
+    def subtype
+      subtype_dictionary_name = "#{type}_types"
+      return nil unless Dictionary.exists?(subtype_dictionary_name)
+
+      @subtype ||= Dictionary.of(subtype_dictionary_name).sample
     end
 
     def age;  @age ||= 0 end
@@ -66,7 +73,13 @@ module Cosmic
       ancestors(depth: depth).map(&:name).map(&:elements).flatten.uniq
     end
 
-    def inspect; "a #{type} named '#{name}'" end
+    def inspect
+      if subtype
+        "a #{subtype} #{type} named '#{name}'" 
+      else
+        "a #{type} named '#{name}'"
+      end
+    end
 
     protected
     def type; self.class.name.split('::').last.downcase end

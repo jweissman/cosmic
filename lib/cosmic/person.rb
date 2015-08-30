@@ -57,7 +57,7 @@ module Cosmic
     end
     
     def profession
-      @profession ||= Profession.generate # Dictionary.of(:profession_names).sample 
+      @profession ||= Profession.generate
     end
 
     def personality
