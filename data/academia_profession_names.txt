@@ -1,4 +1,5 @@
 aide
+researcher
 librarian
 art historian
 historian

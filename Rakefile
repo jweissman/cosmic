@@ -39,3 +39,11 @@ end
 
 task :test    => :spec
 task :default => :spec
+
+###
+
+namespace :data do
+  task :measure do
+    sh "ls data/*.txt | xargs wc -l | sort -r"
+  end
+end

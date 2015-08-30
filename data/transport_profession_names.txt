@@ -3,3 +3,7 @@ aircraft pilot
 sea captain
 airline steward
 merchant marine
+delivery driver
+logistics coordinator
+fleet manager
+school bus driver

@@ -3,7 +3,7 @@ module Cosmic
   class Dictionary
     extend Forwardable
 
-    def_delegators :@entries, :sample, :each
+    def_delegators :@entries, :sample, :each, :each_with_index, :length
 
     attr_accessor :entries
     def initialize(entries=['hello'])

@@ -4,3 +4,7 @@ foundry
 plant
 mill
 workshop
+showroom
+warehouse
+production hall
+office

@@ -4,7 +4,7 @@ describe Building do
   it_behaves_like 'a model'
 
   its('class.parent_type') { is_expected.to be(Lot) }
-  its('class.child_type') { is_expected.to be(Person) }
+  its('class.child_type') { is_expected.to be(Room) }
   
   let(:condition) { subject.send :condition }
   let(:building_type) { subject.send :building_type }
