@@ -18,9 +18,6 @@ crowded
 busy
 pleasant
 warm
-:wa
-:qa
-
 cool
 hot
 cold

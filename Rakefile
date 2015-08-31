@@ -37,13 +37,21 @@ rescue LoadError => e
   end
 end
 
-task :test    => :spec
-task :default => :spec
+#task :test    => [:spec, 'schemes:test' ]
+task :default => 'schemes:spec'
 
 ###
 
+namespace :schemes do
+  task :spec do
+    for scheme in %i( future fantasy minimal )
+      fail unless sh("SCHEME=#{scheme} bundle exec parallel_rspec spec")
+    end
+  end
+end
+
 namespace :data do
   task :measure do
-    sh "ls data/*.txt | xargs wc -l | sort -r"
+    sh "ls data/**/*.txt | xargs wc -l | sort -r | tail -n 30"
   end
 end

@@ -8,6 +8,8 @@ module Cosmic
 
     def to_s
       @elements.map(&:capitalize).join(' ')
+    rescue
+      binding.pry
     end
 
     def self.generate(model, element_count=3)

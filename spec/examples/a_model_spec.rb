@@ -60,12 +60,16 @@ shared_examples "a model" do
 
       its(:siblings) { is_expected.not_to be_empty }
       its(:siblings) { is_expected.to eql(parents_children) }  
-      its('siblings.first')  { is_expected.to be_a(described_class) }
 
+      it "should have siblings of the expected type" do
+        subject.siblings.each do |sibling|
+          is_expected.to be_a(described_class) 
+        end
+      end
 
-      its(:root) { is_expected.not_to be_nil }
-      let(:root_class) { hierarchy.first.classify.constantize }
-      its(:root) { is_expected.to be_a(root_class) }
+      its(:root)        { is_expected.not_to be_nil }
+      let(:root_class)  { hierarchy.first.classify.constantize }
+      its(:root)        { is_expected.to be_a(root_class) }
       its(hierarchy[0]) { is_expected.to be_a(root_class) }
     end
 

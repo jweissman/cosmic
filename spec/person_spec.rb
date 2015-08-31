@@ -32,31 +32,53 @@ describe Person do
   end
 
   context "attribute methods" do
-    it 'should indicate gender' do
-      expect([true,false]).to include(subject.male?)
-      expect([true,false]).to include(subject.female?)
-    end
+    context "personal predicates" do
+      it 'should indicate gender' do
+        expect([true,false]).to include(subject.male?)
+        expect([true,false]).to include(subject.female?)
+      end
 
-    it 'should indicate profession' do
-      expect([true, false]).to include(subject.philosopher?)
-      expect([true, false]).to include(subject.scientist?)
-      expect([true, false]).to include(subject.airline_steward?)
-    end
+      describe "profession methods" do
+        Profession.all.each do |profession_name|
+          it "should indicate whether the person has profession '#{profession_name}'" do 
+           has_profession= subject.send("#{profession_name.gsub(' ','_')}?")
+           expect([true,false]).to include(has_profession) 
+          end
+        end
+      end
 
-    it 'should indicate profession type' do
-      expect([true, false]).to include(subject.technology?)
-      expect([true, false]).to include(subject.transport?)
-      expect([true, false]).to include(subject.government?)
-    end
+      context "professioan type predicates" do
+        Dictionary.of(:job_types).each do |job_type|
+          describe "##{job_type}?" do
+            it "should indicate profession type '#{job_type}'" do
+              has_job_type = subject.send("#{job_type.gsub(' ','_')}?")
+              expect([true, false]).to include(has_job_type)
+            end
+          end
+        end
+      end
 
-    it 'should indicate personal qualities' do
-      expect([true, false]).to include(subject.warmhearted?)
-      expect([true, false]).to include(subject.forceful?)
-    end
+      context "person quality predicates" do
+        Dictionary.of(:personal_qualities).each do |quality|
+          describe "##{quality}?" do
+            it "should indicate whether person has the quality #{quality}" do
+              has_quality = subject.send("#{quality.gsub(' ','_')}?")
+              expect([true, false]).to include(has_quality)
+            end
+          end
+        end
+      end 
 
-    it 'should indicate interests' do
-      expect([true, false]).to include(subject.wrestler?)
-      expect([true, false]).to include(subject.pigeon_racer?)
+      context "personal interest predicates" do
+        Dictionary.of(:human_interests).each do |interest|
+          describe "##{interest}?" do
+            it "should indicate whether person has interest #{interest}" do
+              has_interest = subject.send("#{interest.gsub(' ','_')}?")
+              expect([true, false]).to include(has_interest)
+            end
+          end
+        end
+      end
     end
   end
 

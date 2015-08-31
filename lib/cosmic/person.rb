@@ -30,7 +30,7 @@ module Cosmic
     end
 
     Dictionary.of(:personal_qualities).each do |personal_quality|
-      define_method "#{personal_quality}?" do
+      define_method "#{personal_quality.gsub(' ','_')}?" do
         personality == personal_quality
       end
     end

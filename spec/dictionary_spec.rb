@@ -5,10 +5,11 @@ describe Dictionary do
 
   context ".of" do
     let(:taxonomy) { :female_human_names }
-    subject { Dictionary.of(taxonomy) }
+    let(:scheme) { :minimal }
+    subject { Dictionary.of(taxonomy, scheme) }
 
     let(:expected_entries) do
-      File.open("data/#{taxonomy}.txt").read.each_line.map(&:strip).to_a 
+      File.open("data/#{scheme}/#{taxonomy}.txt").read.each_line.map(&:strip).to_a 
     end
 
     it 'should load entries from a word list file' do

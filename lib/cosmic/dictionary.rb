@@ -15,8 +15,9 @@ module Cosmic
     end
 
     class << self
-      def of(taxonomy)
-        dictionaries[taxonomy] ||= Dictionary.new(load_entries(taxonomy))
+      def of(taxonomy, s=Cosmic.scheme)
+        dictionaries[s] ||= {}
+        dictionaries[s][taxonomy] ||= Dictionary.new(load_entries(taxonomy, s))
       end
 
       def exists?(taxonomy)
@@ -29,16 +30,18 @@ module Cosmic
         @dictionaries ||= {}
       end
 
-      def path_to_data_files
-        @path_to_data_files ||= "data/"
+      def path_to_data_files(s)
+        scheme_path = "#{s}/"
+        "data/#{scheme_path}"
       end
 
-      def taxonomy_path(taxonomy)
-        "#{path_to_data_files}#{taxonomy}.txt"
+      def taxonomy_path(taxonomy,s=Cosmic.scheme)
+        "#{path_to_data_files(s)}#{taxonomy}.txt"
       end
 
-      def load_entries(taxonomy)
-        path  = taxonomy_path(taxonomy)
+      def load_entries(taxonomy, s=Cosmic.scheme)
+        path  = taxonomy_path(taxonomy, s)
+        raise "Missing dictionary '#{taxonomy}' (`touch #{path}`)" unless File.exists?(path)
         file  = File.open(path)
         lines = file.read.each_line
         lines.map(&:strip).to_a 

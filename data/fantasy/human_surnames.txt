@@ -1,0 +1,6 @@
+smith
+jones
+black
+white
+grey
+plum

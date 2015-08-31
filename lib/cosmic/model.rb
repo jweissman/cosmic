@@ -6,7 +6,7 @@ module Cosmic
     MAX_SEARCH_DEPTH = 25
 
     def self.children_range; (2..3) end
-    def self.name_element_range; (2..3) end
+    def self.name_element_range; (1..3) end
 
     attr_writer :parent, :children
 
@@ -15,6 +15,16 @@ module Cosmic
       @parent   = parent
       @children = children
     end
+
+    def inspect
+      if subtype
+        "a #{subtype} #{type} named '#{name}'" 
+      else
+        "a #{type} named '#{name}'"
+      end
+    end
+
+    # TODO predicates subtypes!
 
     def subtype
       subtype_dictionary_name = "#{type}_types"
@@ -73,13 +83,6 @@ module Cosmic
       ancestors(depth: depth).map(&:name).map(&:elements).flatten.uniq
     end
 
-    def inspect
-      if subtype
-        "a #{subtype} #{type} named '#{name}'" 
-      else
-        "a #{type} named '#{name}'"
-      end
-    end
 
     protected
     def type; self.class.name.split('::').last.downcase end

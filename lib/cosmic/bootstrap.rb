@@ -14,10 +14,11 @@ module Cosmic
     def apply_model_code(model,index)
       ruby_code = generate_model_code(model,index)
 
-      # puts 
-      # puts "===== RUBY CODE FOR #{model} ====="
-      # puts ruby_code
-      # puts "------ END RUBY CODE FOR #{model} ----"
+      puts 
+      puts "===== RUBY CODE FOR #{model} ====="
+      puts ruby_code
+      puts "------ END RUBY CODE FOR #{model} ----"
+
       Cosmic.module_eval ruby_code
     end
 
@@ -114,7 +115,7 @@ module Cosmic
     end
   end
 
-  def self.bootstrap(hierarchy)
+  def self.bootstrap(hierarchy=Dictionary.of(:hierarchy_terms).entries)
     BootstrapCode.new(hierarchy).generate!
   end
 end
