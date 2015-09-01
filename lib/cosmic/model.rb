@@ -14,23 +14,49 @@ module Cosmic
       @name     = name
       @parent   = parent
       @children = children
+
+      if Dictionary.exists?(subtype_dictionary_name)
+        subtype_dictionary.each do |subtype_name|
+          define_singleton_method "#{subtype_name.gsub(' ', '_')}?" do
+            subtype_name == self.subtype
+          end
+        end
+      end
     end
 
     def inspect
       if subtype
-        "a #{subtype} #{type} named '#{name}'" 
+        "the #{subtype} #{self.type} '#{name}'" 
       else
-        "a #{type} named '#{name}'"
+        "the #{self.type} '#{name}'"
       end
     end
 
+    def type; self.class.name.split('::').last.downcase end
+
+    def subtype_dictionary_name; "#{type}_types" end
+    def subtype_dictionary; 
+      return [] unless Dictionary.exists? subtype_dictionary_name
+      @subtype_dictionary ||= Dictionary.of(subtype_dictionary_name) 
+    end
+
     # TODO predicates subtypes!
+    # if Dictionary.exists?(subtype_dictionary_name) 
+    #   binding.pry
+    #   subtype_dictionary.each do |subtype_name|
+    #     define_method "#{subtype_name.gsub(' ', '_')}?" do
+    #       subtype_name == self.subtype
+    #     end
+    #   end
+    # else
+    #   puts "--- No dictionary #{subtype_dictionary_name} exists!"
+    # end
 
     def subtype
-      subtype_dictionary_name = "#{type}_types"
-      return nil unless Dictionary.exists?(subtype_dictionary_name)
+      # subtype_dictionary_name = "#{self.class.type}_types"
+      # return nil unless Dictionary.exists?(self.class.subtype_dictionary_name)
 
-      @subtype ||= Dictionary.of(subtype_dictionary_name).sample
+      @subtype ||= self.subtype_dictionary.sample
     end
 
     def age;  @age ||= 0 end
@@ -83,9 +109,7 @@ module Cosmic
       ancestors(depth: depth).map(&:name).map(&:elements).flatten.uniq
     end
 
-
     protected
-    def type; self.class.name.split('::').last.downcase end
 
     def generate_name
       Name.generate(self, self.class.name_element_range.to_a.sample)

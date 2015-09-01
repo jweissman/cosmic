@@ -3,7 +3,7 @@ module Cosmic
     def self.name_element_range; (2..4) end
 
     def inspect
-      base = "#{type} #{name} (#{personality} #{gender} #{profession.name})" 
+      base = "#{self.type} #{name} (#{personality} #{gender} #{profession.name})" 
       aspects.each do |aspect|
         base += " [#{aspect}]"
       end

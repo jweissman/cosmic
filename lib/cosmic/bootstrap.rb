@@ -7,6 +7,8 @@ module Cosmic
       @hierarchy = hierarchy
     end
 
+    def debug?; false end
+
     def generate!
       @hierarchy.each_with_index(&method(:apply_model_code))
     end
@@ -14,10 +16,12 @@ module Cosmic
     def apply_model_code(model,index)
       ruby_code = generate_model_code(model,index)
 
-      puts 
-      puts "===== RUBY CODE FOR #{model} ====="
-      puts ruby_code
-      puts "------ END RUBY CODE FOR #{model} ----"
+      if debug?
+        puts 
+        puts "===== RUBY CODE FOR #{model} ====="
+        puts ruby_code
+        puts "------ END RUBY CODE FOR #{model} ----"
+      end
 
       Cosmic.module_eval ruby_code
     end
@@ -49,7 +53,7 @@ module Cosmic
         rb = ""
         hierarchy[0...index].each_with_index do |ancestor_term, ancestor_index|
           depth = index - ancestor_index
-          rb += "def #{ancestor_term}; (ancestors(depth: #{depth}) - ancestors(depth: #{depth-1})).first end\n"
+          rb += "def #{ancestor_term}; ancestors(depth: #{depth}).lazy.detect { |a| a.is_a?(#{ancestor_term.classify})} end\n"
         end
         rb
       end

@@ -3,6 +3,10 @@ require 'spec_helper'
 def leaf_key; "#{hierarchy[hierarchy.length-1].pluralize}.first" end
 def hierarchy; Dictionary.of(:hierarchy_terms).entries; end
 
+def subtype_dictionary_name(klass); "#{klass.name.split('::').last.downcase}_types" end
+def subtype_dictionary_exists?(klass); Dictionary.exists?(subtype_dictionary_name(klass)) end
+def subtype_dictionary(klass); Dictionary.of(subtype_dictionary_name(klass)) end
+
 shared_examples "a model" do
   context "class attributes" do
     describe ".leaf_node?" do
@@ -99,6 +103,16 @@ shared_examples "a model" do
 
       
   context "instance methods" do
+    context "subtype predicates" do
+      if subtype_dictionary_exists?(described_class) 
+        subtype_dictionary(described_class).each do |subtype_name|
+          describe "should respond to predicate '#{subtype_name}'" do
+            its(:"#{subtype_name.gsub(' ', '_')}?") { is_expected.to eql(subject.subtype == subtype_name) }
+          end
+        end
+      end
+    end
+
     describe "#narrate" do
       let(:narration) { subject.narrate }
 
@@ -107,7 +121,7 @@ shared_examples "a model" do
       end
 
       it 'should include the type' do
-        expect(narration).to include(subject.send :type)
+        expect(narration).to include(subject.type)
       end
 
       it 'should include the subtype' do
@@ -123,7 +137,7 @@ shared_examples "a model" do
 
         it 'should describe children types' do
           subject.children.each do |child|
-            expect(narration).to include(child.send :type)
+            expect(narration).to include(child.type)
           end
         end
       end
